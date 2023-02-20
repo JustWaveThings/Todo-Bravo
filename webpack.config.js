@@ -1,9 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin =
-	require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+//const ESLintPlugin = require('eslint-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
@@ -18,6 +16,9 @@ module.exports = {
 		// .preview.csb.app is the domain for CodeSandbox.io
 		static: './dist',
 		port: 'auto',
+		client: {
+			logging: 'none',
+		},
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -30,12 +31,12 @@ module.exports = {
 			template: './src/index.html',
 			//favicon: path.resolve(__dirname, '../icons/favicon.ico'),
 		}),
-		new BundleAnalyzerPlugin({
-			analyzerPort: 'auto',
-			defaultSizes: 'stat',
-		}),
+		//new BundleAnalyzerPlugin({
+		//	analyzerPort: 'auto',
+		//	defaultSizes: 'stat',
+		//}),
 		new DuplicatePackageCheckerPlugin(),
-		new ESLintPlugin(),
+		//new ESLintPlugin(),
 		new CircularDependencyPlugin({
 			// exclude detection of files based on a RegExp
 			exclude: /a\.js|node_modules/,
