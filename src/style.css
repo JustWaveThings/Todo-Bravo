@@ -1,40 +1,39 @@
-:root{
-  /* from coolors */
---lapis-lazuli: hsla(210, 50%, 40%, 1);
---carolina-blue: hsla(201, 51%, 69%, 1);
---charcoal: hsla(203, 30%, 26%, 1);
---light-green: hsla(112, 60%, 74%, 1);
---nyanza: hsla(124, 64%, 91%, 1);
+:root {
+	/* from coolors */
+	--lapis-lazuli: hsla(210, 50%, 40%, 1);
+	--carolina-blue: hsla(201, 51%, 69%, 1);
+	--charcoal: hsla(203, 30%, 26%, 1);
+	--light-green: hsla(112, 60%, 74%, 1);
+	--nyanza: hsla(124, 64%, 91%, 1);
 
-/* fonts  */
---title-font: 'pacifico', cursive;
+	/* fonts  */
+	--title-font: 'pacifico', cursive;
 
-
-/* color assignments */
---lightest-background: var(--nyanza);
---light-background: var(--carolina-blue);
---title-selected: var(--light-green);
---dark-background: var(--charcoal);
---alt-background: var(--lapis-lazuli);
+	/* color assignments */
+	--lightest-background: var(--nyanza);
+	--light-background: var(--carolina-blue);
+	--title-selected: var(--light-green);
+	--dark-background: var(--charcoal);
+	--alt-background: var(--lapis-lazuli);
 }
 
 @font-face {
-  font-family: 'pacifico';
-  src: url(./fonts/Pacifico-Regular.ttf); format: ('ttf');
+	font-family: 'pacifico';
+	src: url(./fonts/Pacifico-Regular.ttf);
+	format: ('ttf');
 }
 
-
 body {
-  font-family: helvetica;
-  color: white;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  height: 100svh;
+	font-family: helvetica;
+	color: white;
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	height: 100svh;
 }
 
 .main,
@@ -42,58 +41,128 @@ body {
 .footer,
 .nav,
 .pageContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
 }
 
-.pageContainer{
-  width: 100%;
-  height: 100dvh;
+.pageContainer {
+	width: 100%;
+	height: 100dvh;
 }
 
+.header {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
 
-.header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 6%;
-  background-color: var(--alt-background);
-  align-self: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 6%;
+	background-color: var(--alt-background);
+	align-self: flex-start;
 }
 
 .header > h1 {
-  color: var(--title-selected);
-  font-family: var(--title-font);
-  font-size: 3rem;
-  letter-spacing: .3rem;
+	color: var(--title-selected);
+	font-family: var(--title-font);
+	font-size: 3rem;
+	letter-spacing: 0.3rem;
+}
+.header > img {
+	height: 60px;
+	justify-self: flex-start;
+	padding: 0 2rem;
 }
 
 .footer {
-  width: 100%;
-  height: 5%;
-  background-color: var(--alt-background);
-  align-self: flex-end;
-
+	width: 100%;
+	height: 5%;
+	background-color: var(--alt-background);
+	align-self: flex-end;
 }
 
 .mainContainer {
-  display: flex;
-  width: 100svw;
-  height: 90%;
+	display: flex;
+	width: 100svw;
+	height: 90%;
 }
-.nav  {
-  width: 20%;
-  height: 100%;
-  background-color: var(--lightest-background);
-  color: black;
-  
+.nav {
+	width: 20%;
+	height: 100%;
+	background-color: var(--lightest-background);
+	color: black;
+}
+
+.nav > title {
+	display: block;
+	font-family: var(--title-font);
+	font-size: 2rem;
+	letter-spacing: 0.3rem;
+	padding: 0.75rem;
+	text-decoration: underline;
+	opacity: 0.75;
+}
+
+body > div > div.mainContainer > div.nav > button {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--light-background);
+	color: black;
+	font-size: 1.5rem;
+	font-family: var(--title-font);
+	letter-spacing: 0.3rem;
+}
+
+nav > button {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--light-background);
+	color: black;
+	font-size: 1.5rem;
+	font-family: var(--title-font);
+	letter-spacing: 0.3rem;
+}
+
+body > div > div.mainContainer > div.nav > title > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--light-background);
+	color: black;
+	font-size: 1rem;
+	font-family: helvetica;
+	font-weight: bold;
+	letter-spacing: 0rem;
+	list-style: none;
 }
 
 .main {
-  flex-grow: 1;
-  background-color: var(--dark-background)
+	flex-grow: 1;
+	flex-shrink: 1;
+	background-color: var(--dark-background);
 }
 
+img,
+button,
+ul {
+	display: block;
+	border: none;
+}
