@@ -1,4 +1,5 @@
 import { addProjectButton } from './pl-nav';
+import { updateNavProjectList } from './drawNavProjectList';
 
 // not sure this goes here, but it will be here for now...
 export const projectList = [
@@ -54,6 +55,7 @@ form.appendChild(cancelNewProject);
 submitNewProject.addEventListener('click', (e) => {
 	e.preventDefault();
 	projectList.push(titleInput.value);
+	updateNavProjectList();
 	form.reset();
 	console.log(projectList);
 	projectDialog.close();
