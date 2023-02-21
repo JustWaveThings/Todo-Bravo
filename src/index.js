@@ -1,17 +1,17 @@
 /* eslint-disable no-console */
 import './style.css';
-import container from './spaLayout';
-// import createElementFactory from './createElement';
-import { createElement, createFactory } from './elementFactory';
+import { pageContainer } from './pl-pageContainer';
+import { header } from './pl-header';
+import { footer } from './pl-footer';
+import { nav } from './pl-nav';
+import { main } from './pl-main';
+import { mainContainer } from './pl-mainContainer';
 
-const h1 = createFactory('h1');
-const span = createFactory('span');
+const body = document.querySelector('body');
 
-const myHeading = h1(
-	{},
-	'Ember',
-	span({}, ' is the best'),
-	span({}, 'winston')
-);
-
-container.appendChild(myHeading);
+body.appendChild(pageContainer);
+pageContainer.appendChild(header);
+pageContainer.appendChild(mainContainer);
+mainContainer.appendChild(nav);
+mainContainer.appendChild(main);
+pageContainer.appendChild(footer);

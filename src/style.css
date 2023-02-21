@@ -7,7 +7,7 @@
 
 body {
   background-color: black;
-  color: rgba(209, 209, 209, 0.26);
+  color: white;
   font-family: 'RobotoRegular', sans-serif;
   font-size: 16px;
   display: flex;
@@ -16,26 +16,61 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
+  height: 100svh;
+}
+
+.main,
+.header,
+.footer,
+.nav,
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.pageContainer{
+  width: 100%;
   height: 100dvh;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 50vh;
-  border-color: rgba(240, 248, 255, 0.423);
-  ;
-  border-style: solid;
-  font-size: 1rem;
-  font-weight: 700;
+
+.header{
+  width: 100%;
+  height: 10%;
+  background-color: salmon;
+  align-self: flex-start;
+  
 }
+
+.footer {
+  width: 100%;
+  height: 10%;
+  background-color: royalblue;
+  align-self: flex-end;
+
+}
+
+.mainContainer {
+  display: flex;
+  width: 100svw;
+  height: 80%;
+}
+.nav  {
+  width: 20%;
+  height: 100%;
+  background-color: teal;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: darkslategray;
+}[]
 
 span {
   background-image: 
-    linear-gradient(90deg, red, blue, green, orange, yellow, purple);
+    linear-gradient(-170deg, red, blue, green, orange, yellow, purple);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
