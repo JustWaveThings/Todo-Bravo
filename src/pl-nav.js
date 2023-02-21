@@ -1,5 +1,6 @@
 import { createElement } from './elementMaker';
 import addButtonIcon from './icons/add_project.svg';
+import { projectDialog, submitNewProject } from './newProjectDialog';
 
 const addProjectButtonIcon = new Image();
 addProjectButtonIcon.src = addButtonIcon;
@@ -19,6 +20,11 @@ export const addProjectButton = createElement(
 		class: 'add-project-button',
 	}
 );
+
+addProjectButton.addEventListener('click', () => {
+	projectDialog.showModal();
+	addProjectButton.style.display = 'none';
+});
 
 export const addProjectButtonImg = createElement('img', '', {
 	src: addButtonIcon,
