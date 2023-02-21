@@ -1,6 +1,6 @@
 import { createElement } from './elementMaker';
 import addButtonIcon from './icons/add_project.svg';
-import { projectDialog, submitNewProject } from './newProjectDialog';
+import { projectDialog } from './newProjectDialog';
 
 const addProjectButtonIcon = new Image();
 addProjectButtonIcon.src = addButtonIcon;
