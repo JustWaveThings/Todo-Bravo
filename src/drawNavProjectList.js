@@ -1,3 +1,5 @@
+import projectList from './projectList';
+
 document.addEventListener('DOMContentLoaded', () => {
 	const listParent = document.querySelectorAll(
 		'.nav-project-list'
@@ -7,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 export default function updateNavProjectList(listParent) {
 	projectList.forEach((project) => {
-		const listItem = document.createElement('li');
+		console.log(project);
+		/* const listItem = document.createElement('li');
 		listItem.className = 'nav-project-item';
 		listItem.textContent = project;
-		listParent.appendChild(listItem);
+		listParent.appendChild(listItem); */
 	});
 }

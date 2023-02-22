@@ -1,3 +1,6 @@
+import projectList from './projectList';
+import updateNavProjectList from './drawNavProjectList';
+
 // this is the form that will be displayed in the modal, to create a new project
 
 const container = document.querySelector('body');
@@ -48,14 +51,12 @@ submitNewProject.addEventListener('click', (e) => {
 	form.reset();
 	console.log(projectList);
 	projectDialog.close();
-	addProjectButton.style.display = 'flex';
 });
 
 cancelNewProject.addEventListener('click', (e) => {
 	e.preventDefault();
 	form.reset();
 	projectDialog.close();
-	addProjectButton.style.display = 'flex';
 });
 
 export default projectDialog;

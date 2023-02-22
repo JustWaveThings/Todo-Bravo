@@ -23,7 +23,6 @@ export const addProjectButton = createElement(
 
 addProjectButton.addEventListener('click', () => {
 	projectDialog.showModal();
-	addProjectButton.style.display = 'none';
 });
 
 export const addProjectButtonImg = createElement('img', '', {
