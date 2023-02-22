@@ -1,14 +1,13 @@
 {
-	"name": "Todo Bravo",
+	"name": "todo_bravo",
 	"version": "1.0.0",
 	"description": "Todo Bravo todo list",
-	"main": "webpack.config.js",
+	"main": "./src/index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack",
 		"watch": "webpack --watch",
 		"start": "webpack serve --open",
-		"dash": "",
 		"gh-deploy": "git push origin && git subtree push --prefix dist origin gh-pages2",
 		"gh-deploy-init": "git push origin && git subtree push --prefix dist origin gh-pages"
 	},
@@ -24,7 +23,6 @@
 	},
 	"homepage": "https://github.com/JustWaveThings/webpack_template_repository#readme",
 	"devDependencies": {
-		"circular-dependency-plugin": "^5.2.2",
 		"duplicate-package-checker-webpack-plugin": "^3.0.0",
 		"eslint": "^8.34.0",
 		"eslint-config-airbnb-base": "^15.0.0",
@@ -34,7 +32,6 @@
 		"gh-pages": "^5.0.0",
 		"source-map-loader": "^4.0.1",
 		"webpack-cli": "^5.0.1",
-		"webpack-dashboard": "^3.3.7",
 		"webpack-dev-server": "^4.11.1"
 	},
 	"dependencies": {
