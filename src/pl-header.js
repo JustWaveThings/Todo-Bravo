@@ -1,5 +1,7 @@
-import { createElement } from './elementMaker';
+import createElement from './elementMaker';
 
-export const header = createElement('div', '', {
+const header = createElement('div', '', {
 	class: 'header',
 });
+
+export default header;

@@ -1,5 +1,7 @@
-import { createElement } from './elementMaker';
+import createElement from './elementMaker';
 
-export const mainContainer = createElement('div', '', {
+const mainContainer = createElement('div', '', {
 	class: 'mainContainer',
 });
+
+export default mainContainer;

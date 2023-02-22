@@ -1,8 +1,10 @@
 /* eslint-disable no-console */
 import './style.css';
-import { pageContainer } from './pl-pageContainer';
-import { header } from './pl-header';
-import { footer } from './pl-footer';
+import pageContainer from './pl-pageContainer';
+import header from './pl-header';
+import footer from './pl-footer';
+import main from './pl-main';
+import mainContainer from './pl-mainContainer';
 import {
 	nav,
 	navTitle,
@@ -11,8 +13,7 @@ import {
 	navProjectList,
 	navProjectItem,
 } from './pl-nav';
-import { main } from './pl-main';
-import { mainContainer } from './pl-mainContainer';
+
 import { headerCont, headerIcon } from './pl-header-cont';
 
 const body = document.querySelector('body');

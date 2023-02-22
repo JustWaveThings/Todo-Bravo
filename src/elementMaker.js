@@ -1,4 +1,4 @@
-export function createElement(elem, textCont, attributes) {
+function createElement(elem, textCont, attributes) {
 	const element = document.createElement(elem);
 	Object.entries(attributes).forEach(([key, value]) => {
 		element.setAttribute(key, value);
@@ -6,3 +6,5 @@ export function createElement(elem, textCont, attributes) {
 	element.textContent = textCont;
 	return element;
 }
+
+export default createElement;

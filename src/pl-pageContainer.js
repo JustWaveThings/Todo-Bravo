@@ -1,5 +1,7 @@
-import { createElement } from './elementMaker';
+import createElement from './elementMaker';
 
-export const pageContainer = createElement('div', '', {
+const pageContainer = createElement('div', '', {
 	class: 'pageContainer',
 });
+
+export default pageContainer;

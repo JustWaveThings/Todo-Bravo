@@ -1,19 +1,8 @@
-import { addProjectButton } from './pl-nav';
-import { updateNavProjectList } from './drawNavProjectList';
-
-// not sure this goes here, but it will be here for now...
-export const projectList = [
-	'Default Project',
-	'Work',
-	'School',
-	'Personal',
-];
-
-//this is the form that will be displayed in the modal, to create a new project
+// this is the form that will be displayed in the modal, to create a new project
 
 const container = document.querySelector('body');
 
-export const projectDialog = document.createElement('dialog');
+const projectDialog = document.createElement('dialog');
 projectDialog.className = 'modal';
 
 container.appendChild(projectDialog);
@@ -68,3 +57,5 @@ cancelNewProject.addEventListener('click', (e) => {
 	projectDialog.close();
 	addProjectButton.style.display = 'flex';
 });
+
+export default projectDialog;

@@ -1,5 +1,7 @@
-import { createElement } from './elementMaker';
+import createElement from './elementMaker';
 
-export const footer = createElement('div', 'footer', {
+const footer = createElement('div', 'footer', {
 	class: 'footer',
 });
+
+export default footer;

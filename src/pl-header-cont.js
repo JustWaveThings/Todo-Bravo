@@ -1,4 +1,4 @@
-import { createElement } from './elementMaker';
+import createElement from './elementMaker';
 import icon from './icons/icons8-todo-list-24.png';
 
 const myIcon = new Image();
