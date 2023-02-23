@@ -5,6 +5,7 @@ import header from './pl-header';
 import footer from './pl-footer';
 import main from './pl-main';
 import mainContainer from './pl-mainContainer';
+import updateNavProjectList from './drawNavProjectList';
 import {
 	nav,
 	navTitle,
@@ -37,3 +38,5 @@ navProjectList.appendChild(navProjectItem);
 mainContainer.appendChild(main);
 
 pageContainer.appendChild(footer);
+
+updateNavProjectList();

@@ -1,18 +1,34 @@
 import projectList from './projectList';
 
-document.addEventListener('DOMContentLoaded', () => {
-	const listParent = document.querySelectorAll(
-		'.nav-project-list'
-	)[0];
-	return listParent;
-});
+function domLoaded(callback) {
+	if (document.readyState === 'loading') {
+		console.log('loading');
+		document.addEventListener('DOMContentLoaded', () => {
+			callback();
+		});
+	} else {
+		console.log('loaded');
+		callback();
+	}
+}
 
-export default function updateNavProjectList(listParent) {
-	projectList.forEach((project) => {
-		console.log(project);
-		/* const listItem = document.createElement('li');
-		listItem.className = 'nav-project-item';
-		listItem.textContent = project;
-		listParent.appendChild(listItem); */
+export default function updateNavProjectList() {
+	domLoaded(() => {
+		const listParent = document.querySelectorAll(
+			'.nav-project-list'
+		)[0];
+
+		while (listParent.firstChild) {
+			listParent.removeChild(listParent.firstChild);
+		}
+
+		projectList.forEach((project) => {
+			const listItem = document.createElement('li');
+			const link = document.createElement('a');
+			link.textContent = project;
+			link.href = `#${project}`;
+			listParent.appendChild(listItem);
+			listItem.appendChild(link);
+		});
 	});
 }
