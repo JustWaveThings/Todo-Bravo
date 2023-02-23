@@ -26,6 +26,7 @@ export default function updateNavProjectList() {
 			const listItem = document.createElement('li');
 			const link = document.createElement('a');
 			link.textContent = project;
+			link.classList.add('nav-project-item');
 			link.href = `#${project}`;
 			listParent.appendChild(listItem);
 			listItem.appendChild(link);
