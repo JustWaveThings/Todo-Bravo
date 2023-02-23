@@ -25,9 +25,12 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'What shows up in the browser tab',
+			// title: 'What shows up in the browser tab',
 			template: './src/index.html',
-			//favicon: path.resolve(__dirname, '../icons/favicon.ico'),
+			favicon: path.resolve(
+				__dirname,
+				'./src/icons/icons8-todo-list-24.png'
+			),
 		}),
 		new DuplicatePackageCheckerPlugin(),
 		new ESLintPlugin(),

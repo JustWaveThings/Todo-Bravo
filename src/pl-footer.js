@@ -1,7 +1,11 @@
 import createElement from './elementMaker';
 
-const footer = createElement('div', '', {
+export const footer = createElement('div', '', {
 	class: 'footer',
 });
 
-export default footer;
+export const footerTag = createElement(
+	'p',
+	'© 2023, by JustWaveThings',
+	{ class: 'footer-tag' }
+);

@@ -2,7 +2,7 @@
 import './style.css';
 import pageContainer from './pl-pageContainer';
 import header from './pl-header';
-import footer from './pl-footer';
+import { footer, footerTag } from './pl-footer';
 import main from './pl-main';
 import mainContainer from './pl-mainContainer';
 import updateNavProjectList from './drawNavProjectList';
@@ -43,5 +43,6 @@ navProjectList.appendChild(navProjectItem);
 mainContainer.appendChild(main);
 
 pageContainer.appendChild(footer);
+footer.appendChild(footerTag);
 
 updateNavProjectList();
