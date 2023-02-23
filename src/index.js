@@ -13,6 +13,8 @@ import {
 	addProjectButtonImg,
 	navProjectList,
 	navProjectItem,
+	addTaskButton,
+	addTaskButtonImg,
 } from './pl-nav';
 
 import { headerCont, headerIcon, headerTag } from './pl-header-cont';
@@ -32,6 +34,8 @@ mainContainer.appendChild(nav);
 nav.appendChild(navTitle);
 nav.appendChild(addProjectButton);
 addProjectButton.appendChild(addProjectButtonImg);
+nav.appendChild(addTaskButton);
+addTaskButton.appendChild(addTaskButtonImg);
 
 navTitle.appendChild(navProjectList);
 navProjectList.appendChild(navProjectItem);
