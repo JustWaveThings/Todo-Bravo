@@ -2,6 +2,7 @@ import createElement from './elementMaker';
 import addButtonIcon from './icons/add_project.svg';
 import addTaskIcon from './icons/add_todo.svg';
 import projectDialog from './newProjectDialog';
+import taskDialog from './newTaskDialog';
 
 const addProjectButtonIcon = new Image();
 addProjectButtonIcon.src = addButtonIcon;
@@ -47,7 +48,7 @@ export const addTaskButton = createElement('button', 'New Task', {
 });
 
 addTaskButton.addEventListener('click', () => {
-	// TODO - add task dialog to be called here
+	taskDialog.showModal();
 	console.log('add task button clicked');
 });
 
