@@ -2,7 +2,7 @@
 import './style.css';
 import pageContainer from './pl-pageContainer';
 import header from './pl-header';
-import { footer, footerTag } from './pl-footer';
+import { footerTag, footer } from './pl-footer';
 import main from './pl-main';
 import mainContainer from './pl-mainContainer';
 import updateNavProjectList from './drawNavProjectList';

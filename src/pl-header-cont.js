@@ -1,5 +1,5 @@
 import createElement from './elementMaker';
-import icon from './icons/icons8-todo-list-24.png';
+import icon from './icons/todoAppIcon.svg';
 
 const myIcon = new Image();
 
