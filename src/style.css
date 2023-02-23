@@ -165,7 +165,8 @@ a.nav-project-item {
 img,
 button,
 ul,
-title {
+title,
+header {
 	display: block;
 	border: none;
 }
