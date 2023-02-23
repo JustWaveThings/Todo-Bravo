@@ -1,6 +1,6 @@
 import createElement from './elementMaker';
 
-const header = createElement('div', '', {
+const header = createElement('header', '', {
 	class: 'header',
 });
 

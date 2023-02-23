@@ -15,14 +15,15 @@ import {
 	navProjectItem,
 } from './pl-nav';
 
-import { headerCont, headerIcon } from './pl-header-cont';
+import { headerCont, headerIcon, headerTag } from './pl-header-cont';
 
 const body = document.querySelector('body');
 
 body.appendChild(pageContainer);
 pageContainer.appendChild(header);
-header.appendChild(headerCont);
 header.appendChild(headerIcon);
+header.appendChild(headerCont);
+header.appendChild(headerTag);
 
 pageContainer.appendChild(mainContainer);
 

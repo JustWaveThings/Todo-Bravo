@@ -1,6 +1,6 @@
 import createElement from './elementMaker';
 
-const main = createElement('div', 'main', {
+const main = createElement('div', '', {
 	class: 'main',
 });
 

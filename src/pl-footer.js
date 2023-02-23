@@ -1,6 +1,6 @@
 import createElement from './elementMaker';
 
-const footer = createElement('div', 'footer', {
+const footer = createElement('div', '', {
 	class: 'footer',
 });
 
