@@ -17,7 +17,7 @@ form.method = 'dialog';
 parent.appendChild(form);
 
 const title = document.createElement('title');
-title.textContent = 'New Project';
+title.textContent = 'New Task';
 form.appendChild(title);
 
 const titleLabel = document.createElement('label');
@@ -29,33 +29,31 @@ titleInput.type = 'text';
 titleInput.name = 'title';
 titleLabel.appendChild(titleInput);
 
-const submitNewProject = document.createElement('button');
-submitNewProject.textContent = 'Submit';
-submitNewProject.className = 'submit-button';
-submitNewProject.type = 'submit';
-submitNewProject.name = 'submit';
-form.appendChild(submitNewProject);
+const submitNewTask = document.createElement('button');
+submitNewTask.textContent = 'Submit';
+submitNewTask.className = 'submit-button';
+submitNewTask.type = 'submit';
+submitNewTask.name = 'submit';
+form.appendChild(submitNewTask);
 
-const cancelNewProject = document.createElement('button');
-cancelNewProject.textContent = 'Cancel';
-cancelNewProject.className = 'cancel-button';
-cancelNewProject.type = 'cancel';
-cancelNewProject.name = 'cancel';
-form.appendChild(cancelNewProject);
+const cancelNewTask = document.createElement('button');
+cancelNewTask.textContent = 'Cancel';
+cancelNewTask.className = 'cancel-button';
+cancelNewTask.type = 'cancel';
+cancelNewTask.name = 'cancel';
+form.appendChild(cancelNewTask);
 
-submitNewProject.addEventListener('click', (e) => {
+submitNewTask.addEventListener('click', (e) => {
 	e.preventDefault();
-	projectList.push(titleInput.value);
-	updateNavProjectList();
+	// TODO: create a new todo object instance
 	form.reset();
-	console.log(projectList);
-	projectDialog.close();
+	taskDialog.close();
 });
 
-cancelNewProject.addEventListener('click', (e) => {
+cancelNewTask.addEventListener('click', (e) => {
 	e.preventDefault();
 	form.reset();
-	projectDialog.close();
+	taskDialog.close();
 });
 
-export default projectDialog;
+export default taskDialog;
