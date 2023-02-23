@@ -33,3 +33,5 @@ export default function updateNavProjectList() {
 		});
 	});
 }
+
+export function deleteNavProjectItem() {}

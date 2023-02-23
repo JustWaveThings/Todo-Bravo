@@ -37,3 +37,7 @@ export const navProjectList = createElement('ul', '', {
 export const navProjectItem = createElement('li', 'Default Project', {
 	class: 'nav-project-item',
 });
+
+export const navProjectDelete = createElement('button', '-', {
+	class: 'nav-project-delete',
+});
