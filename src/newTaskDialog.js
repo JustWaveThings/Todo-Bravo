@@ -1,15 +1,15 @@
-import projectList from './projectList';
+// import projectList from './projectList';
 
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
 
 const taskDialog = document.createElement('dialog');
-taskDialog.className = 'modal';
+taskDialog.className = 'taskModal';
 
 container.appendChild(taskDialog);
 
-const parent = document.querySelector('.modal');
+const parent = document.querySelector('.taskModal');
 
 const form = document.createElement('form');
 form.className = 'todo-form';
