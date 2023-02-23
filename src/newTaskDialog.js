@@ -1,5 +1,6 @@
 // import projectList from './projectList';
-
+import statusList from './statusList';
+import priorityList from './priorityList';
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
@@ -27,8 +28,62 @@ form.appendChild(titleLabel);
 const titleInput = document.createElement('input');
 titleInput.type = 'text';
 titleInput.name = 'title';
-titleLabel.appendChild(titleInput);
+form.appendChild(titleInput);
 
+const descriptionLabel = document.createElement('label');
+descriptionLabel.textContent = 'Description';
+form.appendChild(descriptionLabel);
+
+const descriptionInput = document.createElement('input');
+descriptionInput.type = 'text';
+descriptionInput.name = 'description';
+form.appendChild(descriptionInput);
+
+const dueDateLabel = document.createElement('label');
+dueDateLabel.textContent = 'Due Date';
+form.appendChild(dueDateLabel);
+
+const dueDateInput = document.createElement('input');
+dueDateInput.type = 'date';
+dueDateInput.name = 'dueDate';
+form.appendChild(dueDateInput);
+
+const priorityLabel = document.createElement('label');
+priorityLabel.textContent = 'Priority';
+form.appendChild(priorityLabel);
+
+const priorityInput = document.createElement('select');
+priorityInput.textContent = 'priority';
+priorityList.forEach((priority) => {
+	const option = document.createElement('option');
+	option.textContent = priority;
+	priorityInput.appendChild(option);
+});
+form.appendChild(priorityInput);
+
+const projectLabel = document.createElement('label');
+projectLabel.textContent = 'Project';
+form.appendChild(projectLabel);
+
+const projectInput = document.createElement('input');
+projectInput.type = 'text';
+projectInput.name = 'project';
+form.appendChild(projectInput);
+
+const statusLabel = document.createElement('label');
+statusLabel.textContent = 'Status';
+form.appendChild(statusLabel);
+
+const statusInput = document.createElement('select');
+statusInput.textContent = 'Status';
+statusList.forEach((status) => {
+	const option = document.createElement('option');
+	option.textContent = status;
+	statusInput.appendChild(option);
+});
+form.appendChild(statusInput);
+
+// submit / cancel buttons with event listeners
 const submitNewTask = document.createElement('button');
 submitNewTask.textContent = 'Submit';
 submitNewTask.className = 'submit-button';

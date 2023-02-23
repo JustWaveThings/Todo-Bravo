@@ -196,6 +196,11 @@ dialog {
 	box-shadow: var(--standard-shadow);
 }
 
+dialog.taskModal {
+	height: 70dvh;
+	width: 50dvw;
+}
+
 dialog::backdrop {
 	background: hsla(112, 60%, 74%, 0.3);
 	opacity: 0.9;
@@ -233,6 +238,7 @@ form > button {
 
 form > label {
 	display: flex;
+	width: 50%;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -242,8 +248,17 @@ form > label {
 label > input {
 	display: flex;
 	flex-direction: column;
-	width: 150%;
+	width: 100%;
 	border-radius: 0.5rem;
 	height: 1.5rem;
+	box-shadow: var(--standard-shadow);
+}
+
+select {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	border-radius: 0.5rem;
+	height: 1.8rem;
 	box-shadow: var(--standard-shadow);
 }
