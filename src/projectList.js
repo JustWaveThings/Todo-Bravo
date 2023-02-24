@@ -1,3 +1,3 @@
-const projectList = ['Default Project', 'Work'];
+const projectList = ['Default', 'Work'];
 
 export default projectList;

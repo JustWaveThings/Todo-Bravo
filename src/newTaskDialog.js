@@ -1,6 +1,8 @@
 import projectList from './projectList';
 import statusList from './statusList';
 import priorityList from './priorityList';
+import createTodoObject from './todoFactory';
+import todoObjects from './todoObjects';
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
@@ -137,6 +139,16 @@ buttonDiv.appendChild(cancelNewTask);
 submitNewTask.addEventListener('click', (e) => {
 	e.preventDefault();
 	// TODO: create a new todo object instance
+	const newTodo = createTodoObject(
+		titleInput.value,
+		descriptionInput.value,
+		dueDateInput.value,
+		priorityInput.value,
+		projectInput.value,
+		statusInput.value
+	);
+	todoObjects.push(newTodo);
+	console.log({ todoObjects });
 	form.reset();
 	taskDialog.close();
 });

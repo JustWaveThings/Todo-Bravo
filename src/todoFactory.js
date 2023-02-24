@@ -1,5 +1,5 @@
-/* eslint-disable no-shadow */
-// eslint-disable-next-line no-unused-vars
+import { v4 as uuidv4 } from 'uuid';
+
 function createTodoObject(
 	title,
 	description,
@@ -15,7 +15,6 @@ function createTodoObject(
 		priority: priority || 'default priority',
 		project: project || 'default project',
 		status: status || 'default status',
-		// eslint-disable-next-line no-undef
 		id: uuidv4(),
 
 		getTitle() {
@@ -46,30 +45,32 @@ function createTodoObject(
 			return this.id;
 		},
 
-		setTitle(title) {
-			this.title = title;
+		setTitle(title1) {
+			this.title = title1;
 		},
 
-		setDescription(description) {
-			this.description = description;
+		setDescription(description1) {
+			this.description = description1;
 		},
 
-		setDueDate(dueDate) {
-			this.dueDate = dueDate;
+		setDueDate(dueDate1) {
+			this.dueDate = dueDate1;
 		},
 
-		setPriority(priority) {
-			this.priority = priority;
+		setPriority(priority1) {
+			this.priority = priority1;
 		},
 
-		setProject(project) {
-			this.project = project;
+		setProject(project1) {
+			this.project = project1;
 		},
 
-		setStatus(status) {
-			this.status = status;
+		setStatus(status1) {
+			this.status = status1;
 		},
 	};
 
 	return todoObject;
 }
+
+export default createTodoObject;
