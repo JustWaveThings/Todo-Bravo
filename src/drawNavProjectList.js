@@ -2,12 +2,10 @@ import projectList from './projectList';
 
 function domLoaded(callback) {
 	if (document.readyState === 'loading') {
-		console.log('loading');
 		document.addEventListener('DOMContentLoaded', () => {
 			callback();
 		});
 	} else {
-		console.log('loaded');
 		callback();
 	}
 }
@@ -34,4 +32,6 @@ export default function updateNavProjectList() {
 	});
 }
 
-export function deleteNavProjectItem() {}
+export function deleteNavProjectItem() {
+	// TODO - delete the project from the nav list
+}

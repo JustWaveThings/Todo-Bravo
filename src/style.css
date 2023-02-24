@@ -198,7 +198,7 @@ dialog {
 
 dialog.taskModal {
 	height: 70dvh;
-	width: 50dvw;
+	width: 30rem;
 }
 
 dialog::backdrop {
@@ -209,19 +209,20 @@ dialog::backdrop {
 dialog > form {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-evenly;
 	height: 100%;
 }
 
 form > title {
 	font-family: var(--title-font);
+	align-self: center;
+	font-size: 1.5rem;
 	opacity: var(--opacity);
 }
 
-form > button {
+form > div > button {
 	display: flex;
-	flex-direction: row-reverse;
 	gap: 0.1rem;
 	padding: 0.5rem;
 	border: none;
@@ -236,7 +237,7 @@ form > button {
 	box-shadow: var(--standard-shadow);
 }
 
-form > label {
+label {
 	display: flex;
 	width: 50%;
 	flex-direction: column;
@@ -245,20 +246,63 @@ form > label {
 	opacity: var(--opacity);
 }
 
-label > input {
+input,
+textarea {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	border-radius: 0.5rem;
 	height: 1.5rem;
+	margin-left: 0.5rem;
 	box-shadow: var(--standard-shadow);
+}
+
+textarea {
+	height: 5rem;
 }
 
 select {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
+	width: 100%;
 	border-radius: 0.5rem;
 	height: 1.8rem;
+	margin-left: 0.5rem;
 	box-shadow: var(--standard-shadow);
+	position: relative;
+}
+
+input[type='date'] {
+	text-align: left;
+	position: relative;
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+	position: absolute;
+	top: 50%;
+	right: 5%;
+	transform: translateY(-50%);
+}
+
+input,
+select,
+textarea {
+	text-align: left;
+	line-height: 0.75rem;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 0.25rem;
+}
+
+form > .form-div {
+	display: flex;
+	width: 80%;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.cancel-button {
+	margin-left: auto;
+}
+
+.submit-button {
+	margin-left: 1.5rem;
 }

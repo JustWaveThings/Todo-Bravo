@@ -18,6 +18,7 @@ import {
 } from './pl-nav';
 
 import { headerCont, headerIcon, headerTag } from './pl-header-cont';
+import refreshProjectList from './refreshProjectList';
 
 const body = document.querySelector('body');
 
@@ -46,3 +47,5 @@ pageContainer.appendChild(footer);
 footer.appendChild(footerTag);
 
 updateNavProjectList();
+
+refreshProjectList();

@@ -21,35 +21,42 @@ const title = document.createElement('title');
 title.textContent = 'New Project';
 form.appendChild(title);
 
+const titleDiv = document.createElement('div');
+titleDiv.className = 'form-div';
+form.appendChild(titleDiv);
+
 const titleLabel = document.createElement('label');
 titleLabel.textContent = 'Title';
-form.appendChild(titleLabel);
+titleDiv.appendChild(titleLabel);
 
 const titleInput = document.createElement('input');
 titleInput.type = 'text';
 titleInput.name = 'title';
-titleLabel.appendChild(titleInput);
+titleDiv.appendChild(titleInput);
+
+const buttonDiv = document.createElement('div');
+buttonDiv.className = 'form-div';
+form.appendChild(buttonDiv);
 
 const submitNewProject = document.createElement('button');
 submitNewProject.textContent = 'Submit';
 submitNewProject.className = 'submit-button';
 submitNewProject.type = 'submit';
 submitNewProject.name = 'submit';
-form.appendChild(submitNewProject);
+buttonDiv.appendChild(submitNewProject);
 
 const cancelNewProject = document.createElement('button');
 cancelNewProject.textContent = 'Cancel';
 cancelNewProject.className = 'cancel-button';
 cancelNewProject.type = 'cancel';
 cancelNewProject.name = 'cancel';
-form.appendChild(cancelNewProject);
+buttonDiv.appendChild(cancelNewProject);
 
 submitNewProject.addEventListener('click', (e) => {
 	e.preventDefault();
 	projectList.push(titleInput.value);
 	updateNavProjectList();
 	form.reset();
-	console.log(projectList);
 	projectDialog.close();
 });
 
