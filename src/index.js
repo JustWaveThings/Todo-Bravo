@@ -19,6 +19,7 @@ import {
 
 import { headerCont, headerIcon, headerTag } from './pl-header-cont';
 import refreshProjectList from './refreshProjectList';
+import redrawTodoList from './redrawTaskList';
 
 const body = document.querySelector('body');
 
@@ -49,3 +50,5 @@ footer.appendChild(footerTag);
 updateNavProjectList();
 
 refreshProjectList();
+
+redrawTodoList();

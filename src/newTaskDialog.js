@@ -3,6 +3,7 @@ import statusList from './statusList';
 import priorityList from './priorityList';
 import createTodoObject from './todoFactory';
 import todoObjects from './todoObjects';
+import redrawTodoList from './redrawTaskList';
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
@@ -138,7 +139,6 @@ buttonDiv.appendChild(cancelNewTask);
 
 submitNewTask.addEventListener('click', (e) => {
 	e.preventDefault();
-	// TODO: create a new todo object instance
 	const newTodo = createTodoObject(
 		titleInput.value,
 		descriptionInput.value,
@@ -149,8 +149,10 @@ submitNewTask.addEventListener('click', (e) => {
 	);
 	todoObjects.push(newTodo);
 	console.log({ todoObjects });
+
 	form.reset();
 	taskDialog.close();
+	redrawTodoList();
 });
 
 cancelNewTask.addEventListener('click', (e) => {

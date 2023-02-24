@@ -47,7 +47,9 @@ headerRow.appendChild(headerCell7);
 thead.appendChild(headerRow);
 
 table.appendChild(thead);
+const tbody = document.createElement('tbody');
 
+table.appendChild(tbody);
 main.appendChild(table);
 
 main.appendChild(mainHeader);
