@@ -9,12 +9,12 @@ function createTodoObject(
 	status
 ) {
 	const todoObject = {
-		title: title || 'default title',
-		description: description || 'default description',
-		dueDate: dueDate || 'default due date',
-		priority: priority || 'default priority',
-		project: project || 'default project',
-		status: status || 'default status',
+		title,
+		description,
+		dueDate,
+		priority,
+		project,
+		status,
 		id: uuidv4(),
 
 		getTitle() {

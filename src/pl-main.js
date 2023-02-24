@@ -9,47 +9,41 @@ export const mainHeader = createElement(
 	'Project: Default',
 	{ class: 'main-header' }
 );
-
-const table = document.createElement('table');
-const thead = document.createElement('thead');
-
-const headerRow = document.createElement('tr');
+main.appendChild(mainHeader);
+const tableHeader = document.createElement('header');
 
 const headerCell1 = document.createElement('th');
-headerCell1.textContent = 'Status';
-
+headerCell1.textContent = 'Title';
 const headerCell2 = document.createElement('th');
-headerCell2.textContent = 'Title';
+headerCell2.textContent = 'Description';
 
 const headerCell3 = document.createElement('th');
-headerCell3.textContent = 'Description';
+headerCell3.textContent = 'Due Date';
 
 const headerCell4 = document.createElement('th');
-headerCell4.textContent = 'Due Date';
+headerCell4.textContent = 'Priority';
 
 const headerCell5 = document.createElement('th');
-headerCell5.textContent = 'Priority';
+headerCell5.textContent = 'Status';
 
-const headerCell6 = document.createElement('th');
+/* const headerCell6 = document.createElement('th');
 headerCell6.textContent = 'Edit';
 
 const headerCell7 = document.createElement('th');
-headerCell7.textContent = 'Delete';
+headerCell7.textContent = 'Delete'; */
 
-headerRow.appendChild(headerCell1);
-headerRow.appendChild(headerCell2);
-headerRow.appendChild(headerCell3);
-headerRow.appendChild(headerCell4);
-headerRow.appendChild(headerCell5);
-headerRow.appendChild(headerCell6);
-headerRow.appendChild(headerCell7);
+tableHeader.appendChild(headerCell1);
+tableHeader.appendChild(headerCell2);
+tableHeader.appendChild(headerCell3);
+tableHeader.appendChild(headerCell4);
+tableHeader.appendChild(headerCell5);
+/* tableHeader.appendChild(headerCell6);
+tableHeader.appendChild(headerCell7); */
 
-thead.appendChild(headerRow);
+main.appendChild(tableHeader);
 
-table.appendChild(thead);
-const tbody = document.createElement('tbody');
+// tableHeader.appendChild(thead);
+const bodySection = document.createElement('section');
+bodySection.className = 'todo-container';
 
-table.appendChild(tbody);
-main.appendChild(table);
-
-main.appendChild(mainHeader);
+main.appendChild(bodySection);

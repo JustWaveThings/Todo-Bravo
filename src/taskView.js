@@ -7,6 +7,7 @@ function taskView(
 	priority = 'default priority',
 	project = 'default project',
 	status = 'default status',
+	// eslint-disable-next-line no-unused-vars
 	id = 'default id'
 ) {
 	const toAppendTo = document.querySelector(`${appendTo}`);
@@ -34,7 +35,7 @@ function taskView(
 		elementType.textContent = props[key].textContent;
 		container.appendChild(elementType);
 	});
-	console.log(appendTo); // tbody
+	console.log(appendTo);
 	toAppendTo.appendChild(container);
 }
 
