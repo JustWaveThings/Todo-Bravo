@@ -113,6 +113,47 @@ h2.header {
 	width: 100svw;
 	height: 90%;
 }
+
+.main {
+	display: flex;
+	flex-direction: column-reverse;
+	height: 100%;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.main-header {
+	margin: 1.5rem;
+	padding: 1rem 2rem 1rem 2rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--standard-shadow);
+}
+
+table {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	margin: 0rem 1.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--light-background);
+	color: black;
+	font-size: 1rem;
+	font-family: helvetica;
+	font-weight: bold;
+	list-style: none;
+	box-shadow: var(--standard-shadow);
+}
+
+tr {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
 .nav {
 	width: 20%;
 	height: 100%;
