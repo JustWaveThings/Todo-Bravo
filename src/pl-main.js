@@ -1,4 +1,4 @@
-import createElement from './elementMaker';
+import createElement from './helpers/elementMaker';
 
 export const main = createElement('section', '', {
 	class: 'main',

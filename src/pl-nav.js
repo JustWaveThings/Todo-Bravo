@@ -1,4 +1,4 @@
-import createElement from './elementMaker';
+import createElement from './helpers/elementMaker';
 import addButtonIcon from './icons/add_project.svg';
 import addTaskIcon from './icons/add_todo.svg';
 import projectDialog from './newProjectDialog';
