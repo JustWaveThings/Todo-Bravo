@@ -1,9 +1,9 @@
-import createElement from './helpers/elementMaker';
+import createElement from '../helpers/elementMaker';
 import addButtonIcon from './icons/add_project.svg';
 import addTaskIcon from './icons/add_todo.svg';
-import projectDialog from './newProjectDialog';
-import taskDialog from './newTaskDialog';
-import refreshProjectList from './refreshProjectList';
+import projectDialog from '../dialogs/newProjectDialog';
+import taskDialog from '../dialogs/newTaskDialog';
+import refreshProjectList from '../helpers/refreshProjectList';
 
 const addProjectButtonIcon = new Image();
 addProjectButtonIcon.src = addButtonIcon;

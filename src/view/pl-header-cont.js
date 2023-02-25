@@ -1,4 +1,4 @@
-import createElement from './helpers/elementMaker';
+import createElement from '../helpers/elementMaker';
 import icon from './icons/todoAppIcon.svg';
 
 const myIcon = new Image();

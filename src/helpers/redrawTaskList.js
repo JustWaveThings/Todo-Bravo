@@ -1,5 +1,5 @@
 import taskView from './taskView';
-import todoObjects from './todoObjects';
+import todoObjects from '../dataStores/todoObjects';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(

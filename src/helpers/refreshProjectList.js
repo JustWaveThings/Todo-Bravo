@@ -1,4 +1,4 @@
-import projectList from './projectList';
+import projectList from '../dataStores/projectList';
 
 function refreshProjectList() {
 	const projectListParent = document.querySelector(

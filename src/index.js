@@ -1,16 +1,16 @@
 /* eslint-disable no-console */
 import './style.css';
-import pageContainer from './pl-pageContainer';
-import header from './pl-header';
+import pageContainer from './view/pl-pageContainer';
+import header from './view/pl-header';
 import {
 	footerTag,
 	footer,
 	clearLocalStorageBtn,
 	clearBtnIcon,
-} from './pl-footer';
-import { main } from './pl-main';
-import mainContainer from './pl-mainContainer';
-import updateNavProjectList from './drawNavProjectList';
+} from './view/pl-footer';
+import { main } from './view/pl-main';
+import mainContainer from './view/pl-mainContainer';
+import updateNavProjectList from './helpers/drawNavProjectList';
 import {
 	nav,
 	navTitle,
@@ -20,11 +20,15 @@ import {
 	navProjectItem,
 	addTaskButton,
 	addTaskButtonImg,
-} from './pl-nav';
+} from './view/pl-nav';
 
-import { headerCont, headerIcon, headerTag } from './pl-header-cont';
-import refreshProjectList from './refreshProjectList';
-import redrawTodoList from './redrawTaskList';
+import {
+	headerCont,
+	headerIcon,
+	headerTag,
+} from './view/pl-header-cont';
+import refreshProjectList from './helpers/refreshProjectList';
+import redrawTodoList from './helpers/redrawTaskList';
 
 const body = document.querySelector('body');
 

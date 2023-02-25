@@ -1,5 +1,5 @@
-import projectList from './projectList';
-import updateNavProjectList from './drawNavProjectList';
+import projectList from '../dataStores/projectList';
+import updateNavProjectList from '../helpers/drawNavProjectList';
 
 // this is the form that will be displayed in the modal, to create a new project
 

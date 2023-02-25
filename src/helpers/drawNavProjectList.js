@@ -1,4 +1,4 @@
-import projectList from './projectList';
+import projectList from '../dataStores/projectList';
 
 function domLoaded(callback) {
 	if (document.readyState === 'loading') {

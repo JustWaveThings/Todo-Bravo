@@ -1,9 +1,9 @@
-import projectList from './projectList';
-import statusList from './statusList';
-import priorityList from './priorityList';
-import createTodoObject from './todoFactory';
-import todoObjects from './todoObjects';
-import redrawTodoList from './redrawTaskList';
+import projectList from '../dataStores/projectList';
+import statusList from '../dataStores/statusList';
+import priorityList from '../dataStores/priorityList';
+import createTodoObject from '../helpers/todoFactory';
+import todoObjects from '../dataStores/todoObjects';
+import redrawTodoList from '../helpers/redrawTaskList';
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
