@@ -19,17 +19,11 @@ Psuedo Code -  Local Storage
 */
 
 import projectList from '../dataStores/projectList';
-import todoObjects from '../todoObjects';
+import todoObjects from '../dataStores/todoObjects';
 
 export function updateLocalStorage() {
 	localStorage.setItem('projectList', JSON.stringify(projectList));
 	localStorage.setItem('taskList', JSON.stringify(todoObjects));
-}
-
-// TODO - figure out how to pass just the element to be deleted, not the whole array
-export function removeItemFromLocalStorage() {
-	localStorage.removeItem('projectList');
-	localStorage.removeItem('taskList');
 }
 
 export function getDataFromLocalStorage() {
@@ -42,9 +36,16 @@ export function getDataFromLocalStorage() {
 	return [projectListGet, todoObjectsGet];
 }
 
+export function removeItemFromLocalStorage(item) {
+	localStorage.removeItem(item);
+	getDataFromLocalStorage();
+	console.log(`localStorage item removed: ${item}`);
+}
+
 // wire to clearLocalStorageBtn
 export function clearLocalStorage() {
 	localStorage.clear();
+	console.log('localStorage cleared');
 }
 
 // run once at page load
@@ -52,4 +53,5 @@ export function checkLocalStorage() {
 	if (localStorage.length > 0) {
 		getDataFromLocalStorage();
 	}
+	console.log('localStorage is empty');
 }
