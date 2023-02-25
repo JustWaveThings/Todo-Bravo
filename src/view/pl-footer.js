@@ -1,5 +1,5 @@
 import createElement from '../helpers/elementMaker';
-import icon from './icons/delete.svg';
+import icon from '../icons/delete.svg';
 
 const myIcon = new Image();
 myIcon.src = icon;
