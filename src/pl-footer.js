@@ -1,4 +1,8 @@
 import createElement from './elementMaker';
+import icon from './icons/delete.svg';
+
+const myIcon = new Image();
+myIcon.src = icon;
 
 export const footerTag = createElement(
 	'p',
@@ -8,4 +12,14 @@ export const footerTag = createElement(
 
 export const footer = createElement('div', '', {
 	class: 'footer',
+});
+
+export const clearLocalStorage = createElement('button', '', {
+	class: 'clear-local-storage',
+	type: 'button',
+});
+
+export const clearBtnIcon = createElement('img', '', {
+	class: 'clearBtnIcon',
+	src: icon,
 });

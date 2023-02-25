@@ -2,7 +2,12 @@
 import './style.css';
 import pageContainer from './pl-pageContainer';
 import header from './pl-header';
-import { footerTag, footer } from './pl-footer';
+import {
+	footerTag,
+	footer,
+	clearLocalStorage,
+	clearBtnIcon,
+} from './pl-footer';
 import { main } from './pl-main';
 import mainContainer from './pl-mainContainer';
 import updateNavProjectList from './drawNavProjectList';
@@ -46,6 +51,8 @@ mainContainer.appendChild(main);
 
 pageContainer.appendChild(footer);
 footer.appendChild(footerTag);
+footer.appendChild(clearLocalStorage);
+clearLocalStorage.appendChild(clearBtnIcon);
 
 updateNavProjectList();
 
