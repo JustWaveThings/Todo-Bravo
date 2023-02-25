@@ -107,6 +107,7 @@ h2.header {
 .footer-tag {
 	font-size: 0.7rem;
 	color: var(--title-selected);
+	opacity: var(--opacity);
 }
 
 .clear-local-storage {
@@ -129,7 +130,7 @@ h2.header {
 }
 
 .clear-local-storage:hover::before {
-	content: 'This will clear all app data in local storage. No recovery possible.';
+	content: 'This will clear ALL app data in local storage. No recovery possible.';
 	display: inline-block;
 	background-color: black;
 	color: var(--light-green);
@@ -140,6 +141,7 @@ h2.header {
 	z-index: 1;
 	transform: translatey(-125%);
 	box-shadow: none !important;
+	opacity: var(--opacity);
 }
 /* holds nav and main */
 .mainContainer {
@@ -165,6 +167,7 @@ h2.header {
 	padding: 1rem 2rem 1rem 2rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--standard-shadow);
+	opacity: var(--opacity);
 }
 /* task container 'container' */
 div.mainContainer > section > section {
@@ -184,6 +187,7 @@ body > div > div.mainContainer > section > header:nth-child(2) {
 	padding: 0.5rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--standard-shadow);
+	opacity: var(--opacity);
 }
 
 section.todo-container {
