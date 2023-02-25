@@ -5,7 +5,7 @@ import header from './pl-header';
 import {
 	footerTag,
 	footer,
-	clearLocalStorage,
+	clearLocalStorageBtn,
 	clearBtnIcon,
 } from './pl-footer';
 import { main } from './pl-main';
@@ -51,8 +51,8 @@ mainContainer.appendChild(main);
 
 pageContainer.appendChild(footer);
 footer.appendChild(footerTag);
-footer.appendChild(clearLocalStorage);
-clearLocalStorage.appendChild(clearBtnIcon);
+footer.appendChild(clearLocalStorageBtn);
+clearLocalStorageBtn.appendChild(clearBtnIcon);
 
 updateNavProjectList();
 

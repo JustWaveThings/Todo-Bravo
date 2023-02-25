@@ -14,7 +14,7 @@ export const footer = createElement('div', '', {
 	class: 'footer',
 });
 
-export const clearLocalStorage = createElement('button', '', {
+export const clearLocalStorageBtn = createElement('button', '', {
 	class: 'clear-local-storage',
 	type: 'button',
 });
