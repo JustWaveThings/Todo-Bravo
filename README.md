@@ -1,2 +1,18 @@
-# webpack_template_repository
- Creating a template repository You can make an existing repository a template, so you and others can generate new repositories with the same directory structure, branches, and files.
+# Todo Bravo
+
+Todo App featuring:
+
+- Factory Functions
+- ES6 Modules
+- Webpack based on my own Webpack Template.
+- localStorage API
+- CSS variables or CSS Custom Properties
+- Flexbox
+- 100% Javascript DOM manipulation
+- Semantic HTML
+- No id pollution in the global namespace
+  
+
+## See project requirements at:
+
+<https://www.theodinproject.com/lessons/node-path-javascript-todo-list>
