@@ -29,6 +29,7 @@ import {
 } from './view/pl-header-cont';
 import refreshProjectList from './helpers/refreshProjectList';
 import redrawTodoList from './helpers/redrawTaskList';
+import { checkLocalStorage } from './helpers/localStorage';
 
 const body = document.querySelector('body');
 
@@ -57,6 +58,8 @@ pageContainer.appendChild(footer);
 footer.appendChild(footerTag);
 footer.appendChild(clearLocalStorageBtn);
 clearLocalStorageBtn.appendChild(clearBtnIcon);
+
+checkLocalStorage();
 
 updateNavProjectList();
 

@@ -1,11 +1,10 @@
-import taskView from './taskView';
+import taskView from '../view/taskView';
 import todoObjects from '../dataStores/todoObjects';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(
 		'section.todo-container'
 	);
-	console.log(todoContainer); // to prove it exists in the DOM, and it does.
 
 	while (todoContainer.firstChild) {
 		todoContainer.removeChild(todoContainer.firstChild);

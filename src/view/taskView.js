@@ -35,7 +35,6 @@ function taskView(
 		elementType.textContent = props[key].textContent;
 		container.appendChild(elementType);
 	});
-	console.log(appendTo);
 	toAppendTo.appendChild(container);
 }
 

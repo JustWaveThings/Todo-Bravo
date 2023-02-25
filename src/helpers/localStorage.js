@@ -48,10 +48,12 @@ export function clearLocalStorage() {
 	console.log('localStorage cleared');
 }
 
-// run once at page load
+// run once at page load in index.js
 export function checkLocalStorage() {
 	if (localStorage.length > 0) {
+		console.log(`there is data in localStorage`);
 		getDataFromLocalStorage();
+	} else {
+		console.log('localStorage is empty');
 	}
-	console.log('localStorage is empty');
 }

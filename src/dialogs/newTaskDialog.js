@@ -4,6 +4,7 @@ import priorityList from '../dataStores/priorityList';
 import createTodoObject from '../helpers/todoFactory';
 import todoObjects from '../dataStores/todoObjects';
 import redrawTodoList from '../helpers/redrawTaskList';
+import { updateLocalStorage } from '../helpers/localStorage';
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
@@ -148,6 +149,7 @@ submitNewTask.addEventListener('click', (e) => {
 		statusInput.value
 	);
 	todoObjects.push(newTodo);
+	updateLocalStorage();
 	console.log({ todoObjects });
 
 	form.reset();
