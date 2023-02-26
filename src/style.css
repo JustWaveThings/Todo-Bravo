@@ -271,6 +271,13 @@ a.nav-project-item {
 	color: black;
 }
 
+ul.nav-project-list > li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
 img,
 button,
 ul,
@@ -281,6 +288,7 @@ i {
 	border: none;
 }
 
+/* dialogs  */
 dialog {
 	align-items: center;
 	height: 20vh;

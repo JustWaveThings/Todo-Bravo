@@ -40,7 +40,7 @@ export const navProjectList = createElement('ul', '', {
 	class: 'nav-project-list',
 });
 
-export const navProjectItem = createElement('li', 'Default Project', {
+export const navProjectItem = createElement('li', '', {
 	class: 'nav-project-item',
 });
 

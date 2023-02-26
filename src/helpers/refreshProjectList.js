@@ -1,5 +1,7 @@
 import projectList from '../dataStores/projectList';
 
+// for the new task dialog
+
 function refreshProjectList() {
 	const projectListParent = document.querySelector(
 		'select[name=project]'

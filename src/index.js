@@ -10,7 +10,10 @@ import {
 } from './view/pl-footer';
 import { main } from './view/pl-main';
 import mainContainer from './view/pl-mainContainer';
-import updateNavProjectList from './helpers/drawNavProjectList';
+import {
+	updateNavProjectList,
+	removeProject,
+} from './helpers/drawNavProjectList';
 import {
 	nav,
 	navTitle,
@@ -66,3 +69,5 @@ updateNavProjectList();
 refreshProjectList();
 
 redrawTodoList();
+
+removeProject();

@@ -1,4 +1,6 @@
 import projectList from '../dataStores/projectList';
+import { removeProjectFromLocalStorage } from './localStorage';
+import refreshProjectList from './refreshProjectList';
 
 function domLoaded(callback) {
 	if (document.readyState === 'loading') {
@@ -10,7 +12,7 @@ function domLoaded(callback) {
 	}
 }
 
-export default function updateNavProjectList() {
+export function updateNavProjectList() {
 	domLoaded(() => {
 		const listParent = document.querySelectorAll(
 			'.nav-project-list'
@@ -28,10 +30,26 @@ export default function updateNavProjectList() {
 			link.href = `#${project}`;
 			listParent.appendChild(listItem);
 			listItem.appendChild(link);
+			const deleteButton = document.createElement('button');
+			deleteButton.textContent = 'X';
+			deleteButton.classList.add('delete-project-button');
+			listItem.appendChild(deleteButton);
 		});
 	});
 }
 
-export function deleteNavProjectItem() {
-	// TODO - delete the project from the nav list
+export function removeProject() {
+	const parentElement = document.querySelector('.nav-project-list');
+
+	parentElement.addEventListener('click', (e) => {
+		if (e.target.classList.contains('delete-project-button')) {
+			const parentTextContent = e.target.parentNode.textContent
+				.trim()
+				.replace(e.target.textContent.trim(), '');
+			console.log(parentTextContent);
+			removeProjectFromLocalStorage(parentTextContent);
+			refreshProjectList();
+			window.location.reload();
+		}
+	});
 }
