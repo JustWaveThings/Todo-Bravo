@@ -71,5 +71,3 @@ export function removeProjectFromLocalStorage(project) {
 	console.log(todoIndex);
 	localStorage.setItem('todoObjects', JSON.stringify(todoItems));
 }
-
-// removeProjectFromLocalStorage('test');
