@@ -34,6 +34,9 @@ export function updateNavProjectList() {
 				const deleteButton = document.createElement('button');
 				deleteButton.textContent = 'X';
 				deleteButton.classList.add('delete-project-button');
+				deleteButton.style.borderRadius = '50%';
+				deleteButton.style.backgroundColor = 'var(--title-selected)';
+				deleteButton.style.padding = '0.2rem';
 				listItem.appendChild(deleteButton);
 			}
 		});

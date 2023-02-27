@@ -4,7 +4,11 @@ const localStorageState = JSON.parse(
 	localStorage.getItem('projectList')
 );
 
-const projectList = ['Default'];
+const projectList = [];
+
+if (!projectList.includes('Default')) {
+	projectList.push('Default');
+}
 
 if (localStorageState) {
 	localStorageState.forEach((project) => {

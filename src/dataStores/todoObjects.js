@@ -3,7 +3,6 @@ const localStorageState = JSON.parse(
 );
 
 const todoObjects = [];
-console.log(todoObjects.length);
 
 if (localStorageState) {
 	localStorageState.forEach((todo) => {
