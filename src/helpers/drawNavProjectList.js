@@ -30,10 +30,12 @@ export function updateNavProjectList() {
 			link.href = `#${project}`;
 			listParent.appendChild(listItem);
 			listItem.appendChild(link);
-			const deleteButton = document.createElement('button');
-			deleteButton.textContent = 'X';
-			deleteButton.classList.add('delete-project-button');
-			listItem.appendChild(deleteButton);
+			if (project !== 'Default') {
+				const deleteButton = document.createElement('button');
+				deleteButton.textContent = 'X';
+				deleteButton.classList.add('delete-project-button');
+				listItem.appendChild(deleteButton);
+			}
 		});
 	});
 }

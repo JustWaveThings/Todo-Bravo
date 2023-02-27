@@ -92,6 +92,9 @@ projectDiv.appendChild(projectLabel);
 
 const projectInput = document.createElement('select');
 projectInput.name = 'project';
+/* const defaultOption = document.createElement('option');
+defaultOption.textContent = 'default';
+projectInput.appendChild(defaultOption); */
 projectList.forEach((project) => {
 	const option = document.createElement('option');
 	option.textContent = project;

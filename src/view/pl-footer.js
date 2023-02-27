@@ -27,4 +27,5 @@ export const clearBtnIcon = createElement('img', '', {
 
 clearLocalStorageBtn.addEventListener('click', () => {
 	clearLocalStorage();
+	window.location.reload();
 });

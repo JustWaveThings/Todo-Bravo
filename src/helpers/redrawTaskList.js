@@ -14,12 +14,12 @@ function redrawTodoList() {
 		taskView(
 			'section.todo-container',
 			'article',
-			todo.getTitle(),
-			todo.getDescription(),
-			todo.getDueDate(),
-			todo.getPriority(),
-			todo.getProject(),
-			todo.getStatus()
+			todo.title,
+			todo.description,
+			todo.dueDate,
+			todo.priority,
+			todo.project,
+			todo.status
 		);
 	});
 }

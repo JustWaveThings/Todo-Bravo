@@ -6,9 +6,7 @@ function taskView(
 	dueDate = 'default due date',
 	priority = 'default priority',
 	project = 'default project',
-	status = 'default status',
-	// eslint-disable-next-line no-unused-vars
-	id = 'default id'
+	status = 'default status'
 ) {
 	const toAppendTo = document.querySelector(`${appendTo}`);
 	const container = document.createElement(elem);

@@ -10,6 +10,7 @@ export const mainHeader = createElement(
 	{ class: 'main-header' }
 );
 main.appendChild(mainHeader);
+
 const tableHeader = document.createElement('header');
 
 const headerCell1 = document.createElement('th');
