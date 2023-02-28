@@ -1,4 +1,6 @@
 import createElement from '../helpers/elementMaker';
+import removeTheTask from '../helpers/removeTask';
+import editTheTask from '../helpers/editTask';
 
 export const main = createElement('section', '', {
 	class: 'main',
@@ -46,3 +48,17 @@ const bodySection = document.createElement('section');
 bodySection.className = 'todo-container';
 
 main.appendChild(bodySection);
+
+// event listener / event delegation for task view
+bodySection.addEventListener('click', (e) => {
+	if (e.target.classList.contains('todo-remove')) {
+		const id = e.target.getAttribute('data-id');
+		console.log('removeTheTask ran');
+		removeTheTask(id);
+	}
+	if (e.target.classList.contains('todo-edit')) {
+		const id = e.target.getAttribute('data-id');
+		console.log('editTheTask ran');
+		editTheTask(id);
+	}
+});
