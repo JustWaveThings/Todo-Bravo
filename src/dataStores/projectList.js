@@ -6,13 +6,18 @@ const localStorageState = JSON.parse(
 
 const projectList = [];
 
+// trying to manage the default project showing up more than once in the project list due to local storage adding to the array
+
 if (!projectList.includes('Default')) {
 	projectList.push('Default');
 }
 
 if (localStorageState) {
 	localStorageState.forEach((project) => {
-		projectList.push(project);
+		const projectExists = projectList.includes(project);
+		if (!projectExists) {
+			projectList.push(project);
+		}
 	});
 }
 

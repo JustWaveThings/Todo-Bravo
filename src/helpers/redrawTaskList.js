@@ -14,12 +14,15 @@ function redrawTodoList() {
 		taskView(
 			'section.todo-container',
 			'article',
+			todo.id,
 			todo.title,
 			todo.description,
 			todo.dueDate,
 			todo.priority,
 			todo.project,
-			todo.status
+			todo.status,
+			todo.edit,
+			todo.remove
 		);
 	});
 }

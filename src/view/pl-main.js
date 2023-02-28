@@ -27,19 +27,17 @@ headerCell4.textContent = 'Priority';
 const headerCell5 = document.createElement('th');
 headerCell5.textContent = 'Status';
 
-/* const headerCell6 = document.createElement('th');
-headerCell6.textContent = 'Edit';
+const headerCell6 = document.createElement('th');
 
 const headerCell7 = document.createElement('th');
-headerCell7.textContent = 'Delete'; */
 
 tableHeader.appendChild(headerCell1);
 tableHeader.appendChild(headerCell2);
 tableHeader.appendChild(headerCell3);
 tableHeader.appendChild(headerCell4);
 tableHeader.appendChild(headerCell5);
-/* tableHeader.appendChild(headerCell6);
-tableHeader.appendChild(headerCell7); */
+tableHeader.appendChild(headerCell6);
+tableHeader.appendChild(headerCell7);
 
 main.appendChild(tableHeader);
 
