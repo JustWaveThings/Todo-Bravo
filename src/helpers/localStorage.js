@@ -7,13 +7,8 @@ export function updateLocalStorage() {
 }
 
 export function getDataFromLocalStorage() {
-	const projectListGet = JSON.parse(
-		localStorage.getItem('projectList')
-	);
-	const todoObjectsGet = JSON.parse(
-		localStorage.getItem('todoObjects')
-	);
-	return [projectListGet, todoObjectsGet];
+	JSON.parse(localStorage.getItem('projectList'));
+	JSON.parse(localStorage.getItem('todoObjects'));
 }
 
 export function removeItemFromLocalStorage(item) {

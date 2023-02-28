@@ -1,28 +1,33 @@
 import todoObjects from '../dataStores/todoObjects';
 import editTaskDialog from '../dialogs/editTaskDialog';
 
+// just trying to make title update first....
+
 function editTheTask(id) {
 	const index = todoObjects.findIndex((todo) => todo.id === id);
+
 	const todo = todoObjects[index];
+
 	editTaskDialog.showModal();
+
 	const form = document.querySelector('.edit-todo-form');
-	form.title.value = todo.title;
-	form.description.value = todo.description;
-	form.dueDate.value = todo.dueDate;
-	form.priority.value = todo.priority;
-	form.project.value = todo.project;
-	form.status.value = todo.status;
+
+	// checking to see if todo is an object with the methods on it.  and it does now they do..
+	console.log(todo);
+
+	// this gets the title from the actual todo
+	form.title.value = todo.getTitle();
+
+	// testing that - it works.
+
+	console.log(form.title.value);
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
-		todo.title = form.title.value;
-		todo.description = form.description.value;
-		todo.dueDate = form.dueDate.value;
-		todo.priority = form.priority.value;
-		todo.project = form.project.value;
-		todo.status = form.status.value;
-		console.log(todo);
+		todo.setTitle(form.title.value);
+		console.log({ todoObjects });
 		editTaskDialog.close();
 	});
 }
+
 export default editTheTask;
