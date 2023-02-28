@@ -9,20 +9,20 @@ import { updateLocalStorage } from '../helpers/localStorage';
 
 const container = document.querySelector('body');
 
-const taskDialog = document.createElement('dialog');
-taskDialog.className = 'taskModal';
+const editTaskDialog = document.createElement('dialog');
+editTaskDialog.className = 'editTaskModal';
 
-container.appendChild(taskDialog);
+container.appendChild(editTaskDialog);
 
-const parent = document.querySelector('.taskModal');
+const parent = document.querySelector('.editTaskModal');
 
 const form = document.createElement('form');
-form.className = 'todo-form';
+form.className = 'edit-todo-form';
 form.method = 'dialog';
 parent.appendChild(form);
 
 const title = document.createElement('title');
-title.textContent = 'New Task';
+title.textContent = 'Edit Task';
 form.appendChild(title);
 
 const titleDiv = document.createElement('div');
@@ -92,6 +92,7 @@ projectDiv.appendChild(projectLabel);
 
 const projectInput = document.createElement('select');
 projectInput.name = 'project';
+
 projectList.forEach((project) => {
 	const option = document.createElement('option');
 	option.textContent = project;
@@ -151,16 +152,15 @@ submitNewTask.addEventListener('click', (e) => {
 	todoObjects.push(newTodo);
 	updateLocalStorage();
 	console.log({ todoObjects });
-
 	form.reset();
-	taskDialog.close();
+	editTaskDialog.close();
 	redrawTodoList();
 });
 
 cancelNewTask.addEventListener('click', (e) => {
 	e.preventDefault();
 	form.reset();
-	taskDialog.close();
+	editTaskDialog.close();
 });
 
-export default taskDialog;
+export default editTaskDialog;

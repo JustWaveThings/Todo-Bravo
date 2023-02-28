@@ -299,7 +299,8 @@ dialog {
 	box-shadow: var(--standard-shadow);
 }
 
-dialog.taskModal {
+dialog.taskModal,
+dialog.editTaskModal {
 	height: 70dvh;
 	width: 30rem;
 }
