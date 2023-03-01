@@ -1,7 +1,6 @@
 import projectList from '../dataStores/projectList';
 import statusList from '../dataStores/statusList';
 import priorityList from '../dataStores/priorityList';
-import createTodoObject from '../helpers/todoFactory';
 import todoObjects from '../dataStores/todoObjects';
 import redrawTodoList from '../helpers/redrawTaskList';
 import { updateLocalStorage } from '../helpers/localStorage';
@@ -35,6 +34,7 @@ titleDiv.appendChild(titleLabel);
 
 const titleInput = document.createElement('input');
 titleInput.type = 'text';
+titleInput.value = todoObjects[0]?.getTitle();
 titleInput.name = 'title';
 titleDiv.appendChild(titleInput);
 
@@ -141,17 +141,9 @@ buttonDiv.appendChild(cancelNewTask);
 
 submitNewTask.addEventListener('click', (e) => {
 	e.preventDefault();
-	const newTodo = createTodoObject(
-		titleInput.value,
-		descriptionInput.value,
-		dueDateInput.value,
-		priorityInput.value,
-		projectInput.value,
-		statusInput.value
-	);
-	todoObjects.push(newTodo);
+	console.log(form.inputTitle.value);
+	todoObjects.setTitle(form.titleInput.value);
 	updateLocalStorage();
-	console.log({ todoObjects });
 	form.reset();
 	editTaskDialog.close();
 	redrawTodoList();
@@ -162,5 +154,25 @@ cancelNewTask.addEventListener('click', (e) => {
 	form.reset();
 	editTaskDialog.close();
 });
+
+function editTheTask(id) {
+	const index = todoObjects.findIndex((todo) => todo.id === id);
+
+	const todo = todoObjects[index];
+
+	editTaskDialog.showModal();
+
+	const form = document.querySelector('.edit-todo-form');
+
+	// checking to see if todo is an object with the methods on it.  and it does now they do..
+	console.log(todo);
+
+	// this gets the title from the actual todo
+	// form.title.value = todo.getTitle();
+
+	// testing that - it works.
+
+	console.log(form.title.value);
+}
 
 export default editTaskDialog;
