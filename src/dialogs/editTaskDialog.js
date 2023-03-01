@@ -126,9 +126,9 @@ buttonDiv.className = 'form-div';
 form.appendChild(buttonDiv);
 
 const submitNewTask = document.createElement('button');
-submitNewTask.textContent = 'Submit';
+submitNewTask.textContent = 'Update';
 submitNewTask.className = 'submit-button';
-submitNewTask.type = 'submit';
+submitNewTask.type = 'button';
 submitNewTask.name = 'submit';
 buttonDiv.appendChild(submitNewTask);
 
@@ -139,10 +139,9 @@ cancelNewTask.type = 'cancel';
 cancelNewTask.name = 'cancel';
 buttonDiv.appendChild(cancelNewTask);
 
-submitNewTask.addEventListener('click', (e) => {
-	e.preventDefault();
-	console.log(form.inputTitle.value);
-	todoObjects.setTitle(form.titleInput.value);
+submitNewTask.addEventListener('click', () => {
+	console.log(form.title.value, 'value of title');
+	todoObjects[0].setTitle(form.title.value);
 	updateLocalStorage();
 	form.reset();
 	editTaskDialog.close();
@@ -155,23 +154,11 @@ cancelNewTask.addEventListener('click', (e) => {
 	editTaskDialog.close();
 });
 
-function editTheTask(id) {
+export function editTheTask(id) {
 	const index = todoObjects.findIndex((todo) => todo.id === id);
-
 	const todo = todoObjects[index];
-
 	editTaskDialog.showModal();
-
-	const form = document.querySelector('.edit-todo-form');
-
-	// checking to see if todo is an object with the methods on it.  and it does now they do..
 	console.log(todo);
-
-	// this gets the title from the actual todo
-	// form.title.value = todo.getTitle();
-
-	// testing that - it works.
-
 	console.log(form.title.value);
 }
 
