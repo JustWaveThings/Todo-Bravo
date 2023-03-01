@@ -15,6 +15,6 @@ export const headerIcon = createElement('img', '', {
 
 export const headerTag = createElement(
 	'h2',
-	' - Make It a Great Day to be Great!',
+	' - Make It a Good Day to be Great!',
 	{ class: 'header' }
 );
