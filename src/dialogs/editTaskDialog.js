@@ -4,6 +4,7 @@ import priorityList from '../dataStores/priorityList';
 import todoObjects from '../dataStores/todoObjects';
 import redrawTodoList from '../helpers/redrawTaskList';
 import { updateLocalStorage } from '../helpers/localStorage';
+
 // this is the form that will be displayed in the modal, to create a new task
 
 const container = document.querySelector('body');
@@ -125,21 +126,21 @@ const buttonDiv = document.createElement('div');
 buttonDiv.className = 'form-div';
 form.appendChild(buttonDiv);
 
-const submitNewTask = document.createElement('button');
-submitNewTask.textContent = 'Update';
-submitNewTask.className = 'submit-button';
-submitNewTask.type = 'button';
-submitNewTask.name = 'submit';
-buttonDiv.appendChild(submitNewTask);
+const editTask = document.createElement('button');
+editTask.textContent = 'Update';
+editTask.className = 'submit-button';
+editTask.type = 'button';
+editTask.name = 'submit';
+buttonDiv.appendChild(editTask);
 
-const cancelNewTask = document.createElement('button');
-cancelNewTask.textContent = 'Cancel';
-cancelNewTask.className = 'cancel-button';
-cancelNewTask.type = 'cancel';
-cancelNewTask.name = 'cancel';
-buttonDiv.appendChild(cancelNewTask);
+const cancelEdit = document.createElement('button');
+cancelEdit.textContent = 'Cancel';
+cancelEdit.className = 'cancel-button';
+cancelEdit.type = 'cancel';
+cancelEdit.name = 'cancel';
+buttonDiv.appendChild(cancelEdit);
 
-submitNewTask.addEventListener('click', () => {
+editTask.addEventListener('click', () => {
 	console.log(form.title.value, 'value of title');
 	todoObjects[0].setTitle(form.title.value);
 	updateLocalStorage();
@@ -148,18 +149,10 @@ submitNewTask.addEventListener('click', () => {
 	redrawTodoList();
 });
 
-cancelNewTask.addEventListener('click', (e) => {
+cancelEdit.addEventListener('click', (e) => {
 	e.preventDefault();
 	form.reset();
 	editTaskDialog.close();
 });
-
-export function editTheTask(id) {
-	const index = todoObjects.findIndex((todo) => todo.id === id);
-	const todo = todoObjects[index];
-	editTaskDialog.showModal();
-	console.log(todo);
-	console.log(form.title.value);
-}
 
 export default editTaskDialog;
