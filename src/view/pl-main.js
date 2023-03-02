@@ -4,6 +4,7 @@ import removeTheTask from '../helpers/removeTask';
 import refreshProjectList from '../helpers/refreshProjectList';
 import editTaskDialog, {
 	editTheTask,
+	populateFormWithTodoData,
 } from '../dialogs/editTaskDialog';
 
 export const main = createElement('section', '', {
@@ -65,7 +66,8 @@ bodySection.addEventListener('click', (e) => {
 		// in case user added a new project and wants to assign it to the task
 		refreshProjectList();
 		editTaskDialog.showModal();
+		populateFormWithTodoData(id);
 		editTheTask(id);
-		console.log('editTheTask was called');
+		// console.log('editTheTask was called');
 	}
 });

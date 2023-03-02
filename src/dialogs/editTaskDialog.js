@@ -35,7 +35,6 @@ titleDiv.appendChild(titleLabel);
 
 const titleInput = document.createElement('input');
 titleInput.type = 'text';
-titleInput.value = todoObjects[0]?.getTitle();
 titleInput.name = 'title';
 titleDiv.appendChild(titleInput);
 
@@ -73,6 +72,7 @@ priorityLabel.textContent = 'Priority';
 priorityDiv.appendChild(priorityLabel);
 
 const priorityInput = document.createElement('select');
+priorityInput.name = 'priority';
 priorityInput.textContent = 'priority';
 priorityList.forEach((priority) => {
 	const option = document.createElement('option');
@@ -113,6 +113,7 @@ statusDiv.appendChild(statusLabel);
 
 const statusInput = document.createElement('select');
 statusInput.textContent = 'Status';
+statusInput.name = 'status';
 statusList.forEach((status) => {
 	const option = document.createElement('option');
 	option.textContent = status;
@@ -143,16 +144,36 @@ buttonDiv.appendChild(cancelEdit);
 function editTaskHandler(id) {
 	return () => {
 		console.log(`edit task with the id of -  ${id}`);
-		const currTodo = todoObjects.findIndex(
+		const currIndex = todoObjects.findIndex(
 			(todo) => todo.getId() === id
 		);
-		console.log(currTodo, ' value of currTodo');
-		todoObjects[currTodo].setTitle(form.title.value);
+		console.log(
+			currIndex,
+			' index of currTodo',
+			form.elements.title.value,
+			'form.elements.title.value'
+		);
+		todoObjects[currIndex].setTitle(form.elements.title.value);
 		updateLocalStorage();
 		form.reset();
 		editTaskDialog.close();
 		redrawTodoList();
 	};
+}
+
+export function populateFormWithTodoData(id) {
+	const currTodo = todoObjects.find((todo) => todo.getId() === id);
+
+	form.elements.title.value = currTodo.getTitle();
+	console.log(
+		form.elements.title.value,
+		'form.elements.title.value  in populateFormWithTodoData'
+	);
+	form.elements.description.value = currTodo.getDescription();
+	form.elements.dueDate.value = currTodo.getDueDate();
+	form.elements.priority.value = currTodo.getPriority();
+	form.elements.project.value = currTodo.getProject();
+	form.elements.project.value = currTodo.getStatus();
 }
 
 export function editTheTask(id) {
