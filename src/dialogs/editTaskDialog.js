@@ -140,14 +140,24 @@ cancelEdit.type = 'cancel';
 cancelEdit.name = 'cancel';
 buttonDiv.appendChild(cancelEdit);
 
-editTask.addEventListener('click', () => {
-	console.log(form.title.value, 'value of title');
-	todoObjects[0].setTitle(form.title.value);
-	updateLocalStorage();
-	form.reset();
-	editTaskDialog.close();
-	redrawTodoList();
-});
+function editTaskHandler(id) {
+	return () => {
+		console.log(`edit task with the id of -  ${id}`);
+		const currTodo = todoObjects.findIndex(
+			(todo) => todo.getId() === id
+		);
+		console.log(currTodo, ' value of currTodo');
+		todoObjects[currTodo].setTitle(form.title.value);
+		updateLocalStorage();
+		form.reset();
+		editTaskDialog.close();
+		redrawTodoList();
+	};
+}
+
+export function editTheTask(id) {
+	editTask.addEventListener('click', editTaskHandler(id));
+}
 
 cancelEdit.addEventListener('click', (e) => {
 	e.preventDefault();

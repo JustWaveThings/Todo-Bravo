@@ -1,8 +1,10 @@
 import createElement from '../helpers/elementMaker';
 import removeTheTask from '../helpers/removeTask';
-import editTheTask from '../helpers/editTask';
+
 import refreshProjectList from '../helpers/refreshProjectList';
-import editTaskDialog from '../dialogs/editTaskDialog';
+import editTaskDialog, {
+	editTheTask,
+} from '../dialogs/editTaskDialog';
 
 export const main = createElement('section', '', {
 	class: 'main',
@@ -63,8 +65,7 @@ bodySection.addEventListener('click', (e) => {
 		// in case user added a new project and wants to assign it to the task
 		refreshProjectList();
 		editTaskDialog.showModal();
-
 		editTheTask(id);
-		console.log('editTheTask ran');
+		console.log('editTheTask was called');
 	}
 });
