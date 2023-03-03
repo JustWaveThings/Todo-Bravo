@@ -21,9 +21,9 @@ form.className = 'edit-todo-form';
 form.method = 'dialog';
 parent.appendChild(form);
 
-const title = document.createElement('title');
-title.textContent = 'Edit Task';
-form.appendChild(title);
+const formTitle = document.createElement('title');
+formTitle.textContent = 'Edit Task';
+form.appendChild(formTitle);
 
 const titleDiv = document.createElement('div');
 titleDiv.className = 'form-div';
@@ -121,18 +121,53 @@ statusList.forEach((status) => {
 });
 statusDiv.appendChild(statusInput);
 
-// submit / cancel buttons with event listeners
-
 const buttonDiv = document.createElement('div');
 buttonDiv.className = 'form-div';
 form.appendChild(buttonDiv);
+
+// edit / cancel buttons with event listeners
 
 const editTask = document.createElement('button');
 editTask.textContent = 'Update';
 editTask.className = 'submit-button';
 editTask.type = 'button';
-editTask.name = 'submit';
+editTask.name = 'edit';
 buttonDiv.appendChild(editTask);
+
+function editTaskHandler(id) {
+	return () => {
+		console.log(`editTaskHandler -  ${id}`);
+		const currTodo = todoObjects.find((todo) => todo.id === id);
+		currTodo.setTitle(form.elements.title.value);
+		currTodo.setDescription(form.elements.description.value);
+		currTodo.setDueDate(form.elements.dueDate.value);
+		currTodo.setPriority(form.elements.priority.value);
+		currTodo.setProject(form.elements.project.value);
+		currTodo.setStatus(form.elements.status.value);
+		redrawTodoList();
+		updateLocalStorage();
+		form.reset();
+		editTaskDialog.close();
+	};
+}
+
+export function editTheTask(id) {
+	editTask.addEventListener('click', editTaskHandler(id), {
+		once: true,
+	});
+	console.log(`editTheTask -  ${id}`);
+}
+
+export function populateFormWithTodoData(id) {
+	console.log(`populateForm -  ${id}`);
+	const currTodo = todoObjects.find((todo) => todo.getId() === id);
+	form.elements.title.value = currTodo.getTitle();
+	form.elements.description.value = currTodo.getDescription();
+	form.elements.dueDate.value = currTodo.getDueDate();
+	form.elements.priority.value = currTodo.getPriority();
+	form.elements.project.value = currTodo.getProject();
+	form.elements.status.value = currTodo.getStatus();
+}
 
 const cancelEdit = document.createElement('button');
 cancelEdit.textContent = 'Cancel';
@@ -140,45 +175,6 @@ cancelEdit.className = 'cancel-button';
 cancelEdit.type = 'cancel';
 cancelEdit.name = 'cancel';
 buttonDiv.appendChild(cancelEdit);
-
-function editTaskHandler(id) {
-	return () => {
-		console.log(`edit task with the id of -  ${id}`);
-		const currIndex = todoObjects.findIndex(
-			(todo) => todo.getId() === id
-		);
-		console.log(
-			currIndex,
-			' index of currTodo',
-			form.elements.title.value,
-			'form.elements.title.value'
-		);
-		todoObjects[currIndex].setTitle(form.elements.title.value);
-		updateLocalStorage();
-		form.reset();
-		editTaskDialog.close();
-		redrawTodoList();
-	};
-}
-
-export function populateFormWithTodoData(id) {
-	const currTodo = todoObjects.find((todo) => todo.getId() === id);
-
-	form.elements.title.value = currTodo.getTitle();
-	console.log(
-		form.elements.title.value,
-		'form.elements.title.value  in populateFormWithTodoData'
-	);
-	form.elements.description.value = currTodo.getDescription();
-	form.elements.dueDate.value = currTodo.getDueDate();
-	form.elements.priority.value = currTodo.getPriority();
-	form.elements.project.value = currTodo.getProject();
-	form.elements.project.value = currTodo.getStatus();
-}
-
-export function editTheTask(id) {
-	editTask.addEventListener('click', editTaskHandler(id));
-}
 
 cancelEdit.addEventListener('click', (e) => {
 	e.preventDefault();

@@ -1,6 +1,6 @@
 import createElement from '../helpers/elementMaker';
 import removeTheTask from '../helpers/removeTask';
-
+// import redrawTodoList from '../helpers/redrawTaskList';
 import refreshProjectList from '../helpers/refreshProjectList';
 import editTaskDialog, {
 	editTheTask,
@@ -58,7 +58,6 @@ main.appendChild(bodySection);
 bodySection.addEventListener('click', (e) => {
 	if (e.target.classList.contains('todo-remove')) {
 		const id = e.target.getAttribute('data-id');
-		console.log('removeTheTask ran');
 		removeTheTask(id);
 	}
 	if (e.target.classList.contains('todo-edit')) {
@@ -68,6 +67,5 @@ bodySection.addEventListener('click', (e) => {
 		editTaskDialog.showModal();
 		populateFormWithTodoData(id);
 		editTheTask(id);
-		// console.log('editTheTask was called');
 	}
 });
