@@ -151,6 +151,16 @@ export function editTaskHandler(id) {
 	};
 
 	editTask.addEventListener('click', handler, { once: true });
+
+	const closeDialogEventHandler = () => {
+		editTask.removeEventListener('click', handler);
+		editTaskDialog.removeEventListener(
+			'close',
+			closeDialogEventHandler
+		);
+	};
+
+	editTaskDialog.addEventListener('close', closeDialogEventHandler);
 }
 
 export function populateFormWithTodoData(id) {
