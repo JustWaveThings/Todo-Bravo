@@ -25,6 +25,9 @@ import {
 	addTaskButtonImg,
 } from './view/pl-nav';
 
+// eslint-disable-next-line no-unused-vars
+import displayFilteredTasks from './helpers/filterTasks';
+
 import {
 	headerCont,
 	headerIcon,

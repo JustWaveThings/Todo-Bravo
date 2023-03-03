@@ -1,5 +1,6 @@
 import taskView from '../view/taskView';
-import todoObjects from '../dataStores/todoObjects';
+import { activeFilter } from './filterTasks';
+// import todoObjects from '../dataStores/todoObjects';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(
@@ -10,7 +11,7 @@ function redrawTodoList() {
 		todoContainer.removeChild(todoContainer.firstChild);
 	}
 
-	todoObjects.forEach((todo) => {
+	activeFilter.forEach((todo) => {
 		taskView(
 			'section.todo-container-holder',
 			'article',

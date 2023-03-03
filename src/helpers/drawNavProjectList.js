@@ -30,13 +30,14 @@ export function updateNavProjectList() {
 			link.href = `#${project}`;
 			listParent.appendChild(listItem);
 			listItem.appendChild(link);
-			if (project !== 'Default') {
+			if (project !== 'All Tasks' && project !== 'Default') {
 				const deleteButton = document.createElement('button');
 				deleteButton.textContent = 'X';
 				deleteButton.classList.add('delete-project-button');
 				deleteButton.style.borderRadius = '50%';
 				deleteButton.style.backgroundColor = 'var(--title-selected)';
 				deleteButton.style.padding = '0.2rem';
+				deleteButton.style.marginLeft = 'auto';
 				listItem.appendChild(deleteButton);
 			}
 		});
