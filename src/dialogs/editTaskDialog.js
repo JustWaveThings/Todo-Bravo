@@ -134,8 +134,25 @@ editTask.type = 'button';
 editTask.name = 'edit';
 buttonDiv.appendChild(editTask);
 
-function editTaskHandler(id) {
-	return () => {
+/* function editTaskHandler(id) {
+	const handler = () => {
+		console.log(`editTaskHandler -  ${id}`);
+		const currTodo = todoObjects.find((todo) => todo.id === id);
+		currTodo.setTitle(form.elements.title.value);
+		currTodo.setDescription(form.elements.description.value);
+		currTodo.setDueDate(form.elements.dueDate.value);
+		currTodo.setPriority(form.elements.priority.value);
+		currTodo.setProject(form.elements.project.value);
+		currTodo.setStatus(form.elements.status.value);
+		form.reset();
+		editTaskDialog.close();
+		updateLocalStorage();
+		redrawTodoList();
+	};
+} */
+
+export function editTaskHandler(id) {
+	const handler = () => {
 		console.log(`editTaskHandler -  ${id}`);
 		const currTodo = todoObjects.find((todo) => todo.id === id);
 		currTodo.setTitle(form.elements.title.value);
@@ -149,14 +166,21 @@ function editTaskHandler(id) {
 		form.reset();
 		editTaskDialog.close();
 	};
+
+	editTask.addEventListener('click', handler, { once: true });
+
+	return handler;
 }
 
-export function editTheTask(id) {
+// To remove the event listener later:
+
+/* export function editTheTask(id) {
+	console.log('editTheTask EventListener added');
 	editTask.addEventListener('click', editTaskHandler(id), {
 		once: true,
 	});
 	console.log(`editTheTask -  ${id}`);
-}
+} */
 
 export function populateFormWithTodoData(id) {
 	console.log(`populateForm -  ${id}`);
@@ -177,9 +201,12 @@ cancelEdit.name = 'cancel';
 buttonDiv.appendChild(cancelEdit);
 
 cancelEdit.addEventListener('click', (e) => {
+	const id = e.target.getAttribute('data-id');
 	e.preventDefault();
 	form.reset();
 	editTaskDialog.close();
+	const handler = editTaskHandler(id);
+	editTask.removeEventListener('click', handler);
 });
 
 export default editTaskDialog;

@@ -3,7 +3,7 @@ import removeTheTask from '../helpers/removeTask';
 // import redrawTodoList from '../helpers/redrawTaskList';
 import refreshProjectList from '../helpers/refreshProjectList';
 import editTaskDialog, {
-	editTheTask,
+	editTaskHandler,
 	populateFormWithTodoData,
 } from '../dialogs/editTaskDialog';
 
@@ -66,6 +66,6 @@ bodySection.addEventListener('click', (e) => {
 		refreshProjectList();
 		editTaskDialog.showModal();
 		populateFormWithTodoData(id);
-		editTheTask(id);
+		editTaskHandler(id);
 	}
 });
