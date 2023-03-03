@@ -3,7 +3,7 @@ import todoObjects from '../dataStores/todoObjects';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(
-		'section.todo-container'
+		'section.todo-container-holder'
 	);
 
 	while (todoContainer.firstChild) {
@@ -12,7 +12,7 @@ function redrawTodoList() {
 
 	todoObjects.forEach((todo) => {
 		taskView(
-			'section.todo-container',
+			'section.todo-container-holder',
 			'article',
 			todo.id,
 			todo.title,

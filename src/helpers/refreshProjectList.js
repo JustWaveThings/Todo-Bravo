@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import projectList from '../dataStores/projectList';
 
 // for the new task dialog

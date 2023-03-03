@@ -1,6 +1,6 @@
 import createElement from '../helpers/elementMaker';
 import removeTheTask from '../helpers/removeTask';
-// import redrawTodoList from '../helpers/redrawTaskList';
+import redrawTodoList from '../helpers/redrawTaskList';
 import refreshProjectList from '../helpers/refreshProjectList';
 import editTaskDialog, {
 	editTaskHandler,
@@ -50,7 +50,7 @@ main.appendChild(tableHeader);
 
 // tableHeader.appendChild(thead);
 const bodySection = document.createElement('section');
-bodySection.className = 'todo-container';
+bodySection.className = 'todo-container-holder';
 
 main.appendChild(bodySection);
 
@@ -67,5 +67,6 @@ bodySection.addEventListener('click', (e) => {
 		editTaskDialog.showModal();
 		populateFormWithTodoData(id);
 		editTaskHandler(id);
+		redrawTodoList();
 	}
 });
