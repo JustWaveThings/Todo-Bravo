@@ -6,6 +6,14 @@ function redrawTodoList(filter) {
 		'section.todo-container-holder'
 	);
 
+	const todoContainerTitle = document.querySelector(
+		'header.main-header'
+	);
+
+	todoContainerTitle.textContent = `Project: ${
+		filter || 'All Tasks'
+	}`;
+
 	while (todoContainer.firstChild) {
 		todoContainer.removeChild(todoContainer.firstChild);
 	}
