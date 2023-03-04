@@ -1,3 +1,4 @@
+/* eslint-disable import/no-mutable-exports */
 import projectList from '../dataStores/projectList';
 import { removeProjectFromLocalStorage } from './localStorage';
 import refreshProjectList from './refreshProjectList';
@@ -43,6 +44,8 @@ export function updateNavProjectList() {
 	});
 }
 
+export let clickedProject = '';
+
 function handleNavPaneClicks() {
 	const parentElement = document.querySelector('.nav-project-list');
 	refreshProjectList();
@@ -51,7 +54,7 @@ function handleNavPaneClicks() {
 		(e) => {
 			e.stopImmediatePropagation();
 			console.log(e.target.textContent);
-			const clickedProject = e.target.textContent;
+			clickedProject = e.target.textContent;
 			if (projectList.includes(clickedProject)) {
 				console.log('project exists');
 			}

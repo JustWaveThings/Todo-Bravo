@@ -4,6 +4,7 @@ import addTaskIcon from '../icons/add_todo.svg';
 import projectDialog from '../dialogs/newProjectDialog';
 import taskDialog from '../dialogs/newTaskDialog';
 import refreshProjectList from '../helpers/refreshProjectList';
+import { updateNavProjectList } from '../helpers/drawNavProjectList';
 
 const addProjectButtonIcon = new Image();
 addProjectButtonIcon.src = addButtonIcon;
@@ -28,8 +29,8 @@ export const addProjectButton = createElement(
 );
 
 addProjectButton.addEventListener('click', () => {
+	updateNavProjectList();
 	projectDialog.showModal();
-	refreshProjectList();
 });
 
 export const addProjectButtonImg = createElement('img', '', {

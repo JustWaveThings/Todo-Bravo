@@ -1,7 +1,9 @@
 import todoObjects from '../dataStores/todoObjects';
-import handleNavPaneClicks from './drawNavProjectList';
+import handleNavPaneClicks, {
+	clickedProject,
+} from './drawNavProjectList';
 
-handleNavPaneClicks();
+// handleNavPaneClicks();
 
 function filterTasks(project) {
 	const filteredTasks = todoObjects.filter(
@@ -20,6 +22,8 @@ function displayFilteredTasks(project = 'All Tasks') {
 	return filteredTasks;
 }
 
-const activeTasks = displayFilteredTasks(clickedProject);
+const activeTasks = displayFilteredTasks(
+	clickedProject || 'All Tasks'
+);
 
 export default activeTasks;

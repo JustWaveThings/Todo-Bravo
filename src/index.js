@@ -10,9 +10,8 @@ import {
 } from './view/pl-footer';
 import { main } from './view/pl-main';
 import mainContainer from './view/pl-mainContainer';
-import {
+import handleNavPaneClicks, {
 	updateNavProjectList,
-	handleNavPaneClicks,
 } from './helpers/drawNavProjectList';
 import {
 	nav,
