@@ -1,5 +1,5 @@
 import taskView from '../view/taskView';
-import activeTasks from './filterTasks';
+import handleNavPaneClicks from './filterTasks';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(
