@@ -53,10 +53,9 @@ function handleNavPaneClicks() {
 		'click',
 		(e) => {
 			e.stopImmediatePropagation();
-			console.log(e.target.textContent);
 			clickedProject = e.target.textContent;
 			if (projectList.includes(clickedProject)) {
-				console.log('project exists');
+				console.log(`${clickedProject} - project exists`);
 			}
 			if (e.target.classList.contains('delete-project-button')) {
 				const parentTextContent = e.target.parentNode.textContent

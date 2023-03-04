@@ -1,7 +1,5 @@
 import todoObjects from '../dataStores/todoObjects';
-import handleNavPaneClicks, {
-	clickedProject,
-} from './drawNavProjectList';
+import { clickedProject } from './drawNavProjectList';
 
 // handleNavPaneClicks();
 
