@@ -191,7 +191,33 @@ body > div > div.mainContainer > section > header:nth-child(2) {
 	opacity: var(--opacity);
 }
 
-section.todo-container {
+header > th {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.5rem;
+	padding: 0.5rem;
+}
+
+header > th:first-child {
+	flex-basis: 10%;
+}
+
+header > th:nth-child(2) {
+	flex-basis: 40%;
+	flex-grow: 1;
+}
+
+header > th:nth-child(3) {
+	margin-left: auto;
+}
+
+header > th:last-child {
+	margin-right: 12%;
+}
+
+section.todo-container-holder {
 	align-self: stretch;
 	display: flex;
 	flex-direction: column;
@@ -202,9 +228,53 @@ section.todo-container {
 article.todo-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	margin: 0.5rem;
+	padding: 0.5rem;
 	opacity: var(--opacity);
+	background-color: hsla(112, 60%, 74%, 0.1);
+	border-radius: 0.5rem;
+}
+
+article.todo-container:hover,
+article.todo-container:focus {
+	background-color: hsla(112, 60%, 74%, 0.2);
+	transition: background-color 350ms ease-in-out;
+	opacity: 1;
+}
+
+/* flexbox the display of the todo-containers */
+
+.todo-title {
+	text-overflow: ellipsis;
+	flex-basis: 10%;
+}
+
+.todo-description {
+	flex-basis: 40%;
+	text-overflow: ellipsis;
+}
+
+.todo-dueDate {
+	flex-basis: 6%;
+}
+
+.todo-priority {
+	flex-basis: 4%;
+}
+
+.todo-status {
+	flex-basis: 6%;
+}
+
+.todo-edit {
+	flex-basis: 4;
+}
+
+.todo-remove {
+	flex-basis: 4%;
 }
 
 /* hides project from display in the table */
