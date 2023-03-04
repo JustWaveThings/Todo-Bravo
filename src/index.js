@@ -1,16 +1,18 @@
 /* eslint-disable no-console */
 import './style.css';
-import pageContainer from './pl-pageContainer';
-import header from './pl-header';
+import pageContainer from './view/pl-pageContainer';
+import header from './view/pl-header';
 import {
 	footerTag,
 	footer,
-	clearLocalStorage,
+	clearLocalStorageBtn,
 	clearBtnIcon,
-} from './pl-footer';
-import { main } from './pl-main';
-import mainContainer from './pl-mainContainer';
-import updateNavProjectList from './drawNavProjectList';
+} from './view/pl-footer';
+import { main } from './view/pl-main';
+import mainContainer from './view/pl-mainContainer';
+import handleNavPaneClicks, {
+	updateNavProjectList,
+} from './helpers/drawNavProjectList';
 import {
 	nav,
 	navTitle,
@@ -20,11 +22,19 @@ import {
 	navProjectItem,
 	addTaskButton,
 	addTaskButtonImg,
-} from './pl-nav';
+} from './view/pl-nav';
 
-import { headerCont, headerIcon, headerTag } from './pl-header-cont';
-import refreshProjectList from './refreshProjectList';
-import redrawTodoList from './redrawTaskList';
+// eslint-disable-next-line no-unused-vars
+import displayFilteredTasks from './helpers/filterTasks';
+
+import {
+	headerCont,
+	headerIcon,
+	headerTag,
+} from './view/pl-header-cont';
+import refreshProjectList from './helpers/refreshProjectList';
+import redrawTodoList from './helpers/redrawTaskList';
+import { checkLocalStorage } from './helpers/localStorage';
 
 const body = document.querySelector('body');
 
@@ -51,11 +61,15 @@ mainContainer.appendChild(main);
 
 pageContainer.appendChild(footer);
 footer.appendChild(footerTag);
-footer.appendChild(clearLocalStorage);
-clearLocalStorage.appendChild(clearBtnIcon);
+footer.appendChild(clearLocalStorageBtn);
+clearLocalStorageBtn.appendChild(clearBtnIcon);
+
+checkLocalStorage();
 
 updateNavProjectList();
 
 refreshProjectList();
 
 redrawTodoList();
+
+handleNavPaneClicks();

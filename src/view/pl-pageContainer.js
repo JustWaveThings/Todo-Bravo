@@ -1,4 +1,4 @@
-import createElement from './elementMaker';
+import createElement from '../helpers/elementMaker';
 
 const pageContainer = createElement('div', '', {
 	class: 'pageContainer',

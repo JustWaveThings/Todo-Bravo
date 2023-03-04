@@ -1,9 +1,10 @@
-import createElement from './elementMaker';
-import addButtonIcon from './icons/add_project.svg';
-import addTaskIcon from './icons/add_todo.svg';
-import projectDialog from './newProjectDialog';
-import taskDialog from './newTaskDialog';
-import refreshProjectList from './refreshProjectList';
+import createElement from '../helpers/elementMaker';
+import addButtonIcon from '../icons/add_project.svg';
+import addTaskIcon from '../icons/add_todo.svg';
+import projectDialog from '../dialogs/newProjectDialog';
+import taskDialog from '../dialogs/newTaskDialog';
+import refreshProjectList from '../helpers/refreshProjectList';
+import { updateNavProjectList } from '../helpers/drawNavProjectList';
 
 const addProjectButtonIcon = new Image();
 addProjectButtonIcon.src = addButtonIcon;
@@ -28,6 +29,7 @@ export const addProjectButton = createElement(
 );
 
 addProjectButton.addEventListener('click', () => {
+	updateNavProjectList();
 	projectDialog.showModal();
 });
 
@@ -40,7 +42,7 @@ export const navProjectList = createElement('ul', '', {
 	class: 'nav-project-list',
 });
 
-export const navProjectItem = createElement('li', 'Default Project', {
+export const navProjectItem = createElement('li', '', {
 	class: 'nav-project-item',
 });
 

@@ -1,5 +1,6 @@
-import projectList from './projectList';
-import updateNavProjectList from './drawNavProjectList';
+import projectList from '../dataStores/projectList';
+import { updateNavProjectList } from '../helpers/drawNavProjectList';
+import { updateLocalStorage } from '../helpers/localStorage';
 
 // this is the form that will be displayed in the modal, to create a new project
 
@@ -58,6 +59,7 @@ submitNewProject.addEventListener('click', (e) => {
 	updateNavProjectList();
 	form.reset();
 	projectDialog.close();
+	updateLocalStorage();
 });
 
 cancelNewProject.addEventListener('click', (e) => {
