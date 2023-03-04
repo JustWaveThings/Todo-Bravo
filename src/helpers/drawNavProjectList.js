@@ -1,7 +1,6 @@
 import projectList from '../dataStores/projectList';
 import { removeProjectFromLocalStorage } from './localStorage';
 import refreshProjectList from './refreshProjectList';
-import displayFilteredTasks from './filterTasks';
 import redrawTodoList from './redrawTaskList';
 
 function domLoaded(callback) {
@@ -56,13 +55,7 @@ function handleNavPaneClicks() {
 			const clickedProject = e.target.textContent;
 			if (projectList.includes(clickedProject)) {
 				console.log(`${clickedProject} - project exists`);
-
-				const activeTasks = displayFilteredTasks(
-					clickedProject || 'All Tasks'
-				);
-				console.log(activeTasks);
-				redrawTodoList();
-				return activeTasks;
+				redrawTodoList(clickedProject);
 			}
 			if (e.target.classList.contains('delete-project-button')) {
 				const parentTextContent = e.target.parentNode.textContent

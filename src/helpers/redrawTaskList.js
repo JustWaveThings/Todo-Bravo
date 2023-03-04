@@ -1,7 +1,7 @@
 import taskView from '../view/taskView';
 import displayFilteredTasks from './filterTasks';
 
-function redrawTodoList() {
+function redrawTodoList(filter) {
 	const todoContainer = document.querySelector(
 		'section.todo-container-holder'
 	);
@@ -9,9 +9,9 @@ function redrawTodoList() {
 	while (todoContainer.firstChild) {
 		todoContainer.removeChild(todoContainer.firstChild);
 	}
+	// how do I get the project name  from the variable 'clickedProject'?
+	const filteredTasks = displayFilteredTasks(filter || 'All Tasks');
 
-	const filteredTasks = displayFilteredTasks('All Tasks');
-	// how do I fix this so that it works with the displayFilteredTasks function?
 	filteredTasks.forEach((todo) => {
 		taskView(
 			'section.todo-container-holder',
