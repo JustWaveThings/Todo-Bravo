@@ -270,6 +270,7 @@ body > div > div.mainContainer > div.nav > title > ul {
 a.nav-project-item {
 	text-decoration: none;
 	color: black;
+	flex-grow: 1;
 }
 
 ul.nav-project-list > li {
@@ -277,6 +278,23 @@ ul.nav-project-list > li {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.todo-edit,
+.todo-remove {
+	margin: 0.25rem;
+}
+
+.todo-edit,
+.todo-remove,
+ul.nav-project-list > li :hover,
+ul.nav-project-list > li :focus {
+	background-color: var(--title-selected);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	transition: background-color 350ms ease-in-out;
 }
 
 img,

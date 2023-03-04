@@ -12,7 +12,7 @@ import { main } from './view/pl-main';
 import mainContainer from './view/pl-mainContainer';
 import {
 	updateNavProjectList,
-	removeProject,
+	handleNavPaneClicks,
 } from './helpers/drawNavProjectList';
 import {
 	nav,
@@ -73,4 +73,4 @@ refreshProjectList();
 
 redrawTodoList();
 
-removeProject();
+handleNavPaneClicks();

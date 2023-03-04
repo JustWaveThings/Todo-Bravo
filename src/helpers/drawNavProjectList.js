@@ -1,6 +1,8 @@
 import projectList from '../dataStores/projectList';
 import { removeProjectFromLocalStorage } from './localStorage';
 import refreshProjectList from './refreshProjectList';
+import displayFilteredTasks from './filterTasks';
+import redrawTodoList from './redrawTaskList';
 
 function domLoaded(callback) {
 	if (document.readyState === 'loading') {
@@ -27,7 +29,6 @@ export function updateNavProjectList() {
 			const link = document.createElement('a');
 			link.textContent = project;
 			link.classList.add('nav-project-item');
-			link.href = `#${project}`;
 			listParent.appendChild(listItem);
 			listItem.appendChild(link);
 			if (project !== 'All Tasks' && project !== 'Default') {
@@ -37,25 +38,37 @@ export function updateNavProjectList() {
 				deleteButton.style.borderRadius = '50%';
 				deleteButton.style.backgroundColor = 'var(--title-selected)';
 				deleteButton.style.padding = '0.2rem';
-				deleteButton.style.marginLeft = 'auto';
+
 				listItem.appendChild(deleteButton);
 			}
 		});
 	});
 }
 
-export function removeProject() {
+export function handleNavPaneClicks() {
 	const parentElement = document.querySelector('.nav-project-list');
-
-	parentElement.addEventListener('click', (e) => {
-		if (e.target.classList.contains('delete-project-button')) {
-			const parentTextContent = e.target.parentNode.textContent
-				.trim()
-				.replace(e.target.textContent.trim(), '');
-			console.log(parentTextContent);
-			removeProjectFromLocalStorage(parentTextContent);
-			refreshProjectList();
-			window.location.reload();
-		}
-	});
+	refreshProjectList();
+	parentElement.addEventListener(
+		'click',
+		(e) => {
+			e.stopImmediatePropagation();
+			console.log(e.target.textContent);
+			const clickedProject = e.target.textContent;
+			if (projectList.includes(clickedProject)) {
+				console.log('project exists');
+				displayFilteredTasks(clickedProject);
+				redrawTodoList();
+			}
+			if (e.target.classList.contains('delete-project-button')) {
+				const parentTextContent = e.target.parentNode.textContent
+					.trim()
+					.replace(e.target.textContent.trim(), '');
+				console.log(parentTextContent);
+				removeProjectFromLocalStorage(parentTextContent);
+				refreshProjectList();
+				window.location.reload();
+			}
+		},
+		{ capture: true }
+	);
 }
