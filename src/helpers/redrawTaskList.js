@@ -1,5 +1,5 @@
 import taskView from '../view/taskView';
-import handleNavPaneClicks from './filterTasks';
+import displayFilteredTasks from './filterTasks';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(
@@ -10,7 +10,9 @@ function redrawTodoList() {
 		todoContainer.removeChild(todoContainer.firstChild);
 	}
 
-	activeTasks.forEach((todo) => {
+	const filteredTasks = displayFilteredTasks('All Tasks');
+	// how do I fix this so that it works with the displayFilteredTasks function?
+	filteredTasks.forEach((todo) => {
 		taskView(
 			'section.todo-container-holder',
 			'article',
