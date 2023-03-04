@@ -1,7 +1,5 @@
 import taskView from '../view/taskView';
-import displayFilteredTasks from './filterTasks';
-
-const activeTasks = displayFilteredTasks();
+import activeTasks from './filterTasks';
 
 function redrawTodoList() {
 	const todoContainer = document.querySelector(
