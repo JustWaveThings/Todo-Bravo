@@ -60,6 +60,7 @@ submitNewProject.addEventListener('click', (e) => {
 	form.reset();
 	projectDialog.close();
 	updateLocalStorage();
+	window.location.reload();
 });
 
 cancelNewProject.addEventListener('click', (e) => {

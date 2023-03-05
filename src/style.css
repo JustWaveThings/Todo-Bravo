@@ -146,7 +146,7 @@ h2.header {
 /* holds nav and main */
 .mainContainer {
 	display: flex;
-	width: 100svw;
+	justify-content: stretch;
 	height: 90%;
 }
 /* container */
@@ -157,7 +157,6 @@ h2.header {
 	justify-content: flex-start;
 	align-items: flex-start;
 	flex-grow: 1;
-	flex-shrink: 1;
 	background-color: var(--dark-background);
 }
 
@@ -285,7 +284,7 @@ article.todo-container:focus {
 /* nav section  */
 
 .nav {
-	width: 20%;
+	width: 250px;
 	height: 100%;
 	background-color: var(--lightest-background);
 	color: black;
@@ -355,15 +354,14 @@ ul.nav-project-list > li {
 .todo-edit,
 .todo-remove {
 	margin: 0.25rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
 }
 
 .todo-edit,
 .todo-remove,
-ul.nav-project-list > li :hover,
-ul.nav-project-list > li :focus {
+ul.nav-project-list > li:hover {
 	background-color: var(--title-selected);
-	padding: 0.5rem;
-	border-radius: 0.5rem;
 	transition: background-color 350ms ease-in-out;
 }
 
