@@ -11,7 +11,7 @@ Todo App featuring Javascript Concepts:
 - 100% Vanilla Javascript DOM manipulation
 - Semantic HTML
 - No id pollution in the global namespace!
-  
+
 ## See project requirements at
 
 <https://www.theodinproject.com/lessons/node-path-javascript-todo-list>
